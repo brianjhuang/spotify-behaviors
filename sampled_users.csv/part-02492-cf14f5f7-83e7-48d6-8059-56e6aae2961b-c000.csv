@@ -1,0 +1,11 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,1,10,t_925fe3a1-e8be-4062-9dd4-2a41857e308e,false,false,false,true,0,0,0,0,0,0,true,10,2018-09-01,false,catalog,trackdone,trackdone
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,2,10,t_32598e62-6456-47a8-8c1e-b93f7c68a2b6,false,false,false,true,0,1,0,0,0,1,false,10,2018-09-01,false,catalog,trackdone,trackdone
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,3,10,t_c7fc8984-9666-48f9-9081-ffc4a0a1310b,true,true,true,false,0,0,1,1,0,0,false,10,2018-09-01,false,catalog,trackdone,backbtn
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,4,10,t_32598e62-6456-47a8-8c1e-b93f7c68a2b6,false,false,true,false,0,1,0,0,1,5,false,10,2018-09-01,false,catalog,backbtn,trackdone
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,5,10,t_c7fc8984-9666-48f9-9081-ffc4a0a1310b,false,false,false,true,0,0,1,1,1,9,false,10,2018-09-01,false,catalog,trackdone,trackdone
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,6,10,t_7eadebd6-232b-428b-a00d-f01493d056b7,false,false,false,true,0,1,0,0,0,0,false,10,2018-09-01,false,catalog,trackdone,trackdone
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,7,10,t_bbf21993-71aa-4517-bd4d-ecebb4a84071,false,false,false,true,0,1,0,0,0,0,false,10,2018-09-01,false,catalog,trackdone,trackdone
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,8,10,t_fcc733db-7035-4f6f-b12b-6f2a6950b613,false,true,true,false,0,0,1,1,0,0,false,10,2018-09-01,false,catalog,trackdone,fwdbtn
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,9,10,t_e8041aa0-11f1-4147-bdc3-0b889ba101f2,true,true,true,false,0,1,0,0,0,0,false,10,2018-09-01,false,catalog,fwdbtn,fwdbtn
+48_d846c7b4-ce32-44e8-80e9-8dc520e3bd2b,10,10,t_8b30c326-5f53-4e99-adb6-994704a52f05,true,true,true,false,0,1,0,0,0,0,false,10,2018-09-01,false,catalog,fwdbtn,fwdbtn

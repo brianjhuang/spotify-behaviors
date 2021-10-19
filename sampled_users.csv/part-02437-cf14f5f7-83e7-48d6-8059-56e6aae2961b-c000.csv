@@ -1,0 +1,11 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+20_ef80dfba-882b-47d1-b8cd-97945d264074,1,10,t_1f8c1395-86b4-4b8a-8752-5181f29bfd87,true,true,true,false,0,0,0,0,1,0,false,18,2018-08-04,true,radio,appload,fwdbtn
+20_ef80dfba-882b-47d1-b8cd-97945d264074,2,10,t_9df9bcee-b040-4dca-9c85-0a97b6b0c1b5,true,true,true,false,0,1,0,0,0,0,false,18,2018-08-04,true,radio,fwdbtn,fwdbtn
+20_ef80dfba-882b-47d1-b8cd-97945d264074,3,10,t_25283357-c5b2-407b-a7b1-26b411afbd20,true,true,true,false,0,1,0,0,0,0,false,18,2018-08-04,true,radio,fwdbtn,fwdbtn
+20_ef80dfba-882b-47d1-b8cd-97945d264074,4,10,t_77ead065-7c34-4045-ab46-2452b62e2efc,true,true,true,false,0,1,0,0,0,0,false,18,2018-08-04,true,radio,fwdbtn,fwdbtn
+20_ef80dfba-882b-47d1-b8cd-97945d264074,5,10,t_4b0f8622-9f4d-460b-bc9f-7bdcfcb665bc,true,true,true,false,0,1,0,0,0,0,false,18,2018-08-04,true,radio,fwdbtn,fwdbtn
+20_ef80dfba-882b-47d1-b8cd-97945d264074,6,10,t_fc52526b-bd33-4c6e-a205-98e2b093e9d7,true,true,true,false,0,0,1,1,0,0,false,18,2018-08-04,true,radio,fwdbtn,endplay
+20_ef80dfba-882b-47d1-b8cd-97945d264074,7,10,t_8de72967-8fd9-4460-a9b7-1d1f241fb25b,true,true,true,false,1,1,0,0,0,0,true,18,2018-08-04,true,personalized_playlist,clickrow,fwdbtn
+20_ef80dfba-882b-47d1-b8cd-97945d264074,8,10,t_8ee77117-f99d-4398-b166-7c992af80b00,false,true,true,false,0,0,1,1,0,0,true,18,2018-08-04,true,personalized_playlist,fwdbtn,endplay
+20_ef80dfba-882b-47d1-b8cd-97945d264074,9,10,t_9a008295-d9a4-45f6-a179-7288879cf497,false,true,true,false,1,1,0,0,0,0,false,18,2018-08-04,true,catalog,clickrow,endplay
+20_ef80dfba-882b-47d1-b8cd-97945d264074,10,10,t_bacf06d3-9185-4183-84ea-ff0db51475ce,false,false,false,true,1,1,0,0,0,0,false,18,2018-08-04,true,editorial_playlist,clickrow,trackdone

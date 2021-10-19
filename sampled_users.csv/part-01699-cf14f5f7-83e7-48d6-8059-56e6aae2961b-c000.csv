@@ -1,0 +1,16 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,1,15,t_4dfb341f-4b04-45fe-aa7b-7faeae368c15,false,false,true,false,0,0,0,0,0,0,false,11,2018-07-15,true,radio,clickrow,endplay
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,2,15,t_1350f904-3e39-4280-be9d-5d12f3551502,false,false,false,true,1,1,0,0,0,0,false,11,2018-07-15,true,catalog,clickrow,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,3,15,t_32270005-26a1-4763-8ba5-44fcc15f9914,false,false,false,true,0,1,0,0,0,0,false,11,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,4,15,t_fbc9b2d0-952d-4a8b-ac06-5e27e062810d,false,false,false,true,0,1,0,0,0,0,false,11,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,5,15,t_b1f1770c-b787-4062-98f4-015975e886a7,false,false,false,true,0,1,0,0,0,0,false,11,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,6,15,t_89d0c87b-7f11-43d8-ad49-f2efd2237d4c,false,false,false,true,0,1,0,0,0,0,false,11,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,7,15,t_4e9a887d-f604-4964-9f3d-b75b60c6fcfc,false,false,true,false,0,0,1,1,0,0,false,11,2018-07-15,true,catalog,trackdone,endplay
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,8,15,t_32270005-26a1-4763-8ba5-44fcc15f9914,false,false,false,true,0,1,0,0,0,0,false,12,2018-07-15,true,catalog,clickrow,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,9,15,t_fbc9b2d0-952d-4a8b-ac06-5e27e062810d,false,false,false,true,0,1,0,0,0,0,false,12,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,10,15,t_b1f1770c-b787-4062-98f4-015975e886a7,false,false,false,true,0,1,0,0,0,0,false,12,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,11,15,t_89d0c87b-7f11-43d8-ad49-f2efd2237d4c,false,false,false,true,0,1,0,0,0,0,false,12,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,12,15,t_4e9a887d-f604-4964-9f3d-b75b60c6fcfc,false,false,false,true,0,1,0,0,0,0,false,12,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,13,15,t_60e12e04-5a31-40db-9db4-1b43efe6c0eb,false,false,false,true,0,1,0,0,0,0,false,12,2018-07-15,true,catalog,trackdone,trackdone
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,14,15,t_0133dae0-364a-43f0-a030-8e0fe584d2e3,false,true,true,false,0,0,1,1,0,0,false,12,2018-07-15,true,catalog,trackdone,fwdbtn
+0_110d7b7b-b11f-4ae9-8196-01d53dd0ac4a,15,15,t_0be756a2-573c-4681-b217-da2977b2b02d,false,false,false,true,0,1,0,0,0,0,false,12,2018-07-15,true,catalog,fwdbtn,trackdone

@@ -1,0 +1,12 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,1,11,t_a1c3ecda-2f02-4cb1-a72a-a7ebfb41c7b5,false,false,false,true,0,0,0,0,0,1,false,21,2018-09-02,true,user_collection,clickrow,endplay
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,2,11,t_8d0df76d-37af-4a09-adec-b87e09f75a11,false,false,false,false,1,0,1,1,0,0,false,21,2018-09-02,true,catalog,clickrow,endplay
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,3,11,t_07bdf5f8-06a1-4815-a960-70bea4588dc2,false,false,false,false,0,0,1,1,0,0,false,21,2018-09-02,true,catalog,clickrow,endplay
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,4,11,t_96fb2eff-cdec-48ea-b710-9668bcf32345,false,false,false,true,0,1,0,0,0,2,false,21,2018-09-02,true,catalog,clickrow,trackdone
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,5,11,t_07bdf5f8-06a1-4815-a960-70bea4588dc2,true,true,true,false,0,1,0,0,0,0,false,21,2018-09-02,true,catalog,trackdone,endplay
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,6,11,t_c5f452de-80ad-46c1-99d5-87b44d9d2872,false,true,true,false,1,1,0,0,0,0,false,21,2018-09-02,true,catalog,clickrow,endplay
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,7,11,t_77591c47-7e28-488d-9d36-ff0200f7148b,false,false,false,false,1,1,0,0,0,0,false,21,2018-09-02,true,catalog,clickrow,endplay
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,8,11,t_07bdf5f8-06a1-4815-a960-70bea4588dc2,false,false,true,false,0,1,0,0,0,0,false,21,2018-09-02,true,catalog,clickrow,fwdbtn
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,9,11,t_c3a18eb9-c1a2-4cb1-a1e3-cd222734ec95,true,true,true,false,0,1,0,0,0,0,false,21,2018-09-02,true,catalog,fwdbtn,fwdbtn
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,10,11,t_ade728c1-3dcf-4f10-a0a7-0011a4d93a6d,false,true,true,false,0,1,0,0,0,0,false,21,2018-09-02,true,catalog,fwdbtn,backbtn
+50_a105e3b8-e1f9-456a-954a-ed280b3ca0d1,11,11,t_c3a18eb9-c1a2-4cb1-a1e3-cd222734ec95,true,true,true,false,0,1,0,0,0,0,false,21,2018-09-02,true,catalog,backbtn,endplay

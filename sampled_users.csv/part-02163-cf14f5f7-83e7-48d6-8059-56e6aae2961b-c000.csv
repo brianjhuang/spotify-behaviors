@@ -1,0 +1,12 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+59_d4784fa5-5961-4272-918f-062730528030,1,11,t_4406e6a4-e19f-40f7-b65e-846c83dc44a6,false,false,true,false,0,0,0,0,0,0,false,8,2018-09-12,true,editorial_playlist,playbtn,endplay
+59_d4784fa5-5961-4272-918f-062730528030,2,11,t_1546ef94-75df-4fb1-bdce-629103295d05,false,false,true,false,1,0,1,1,0,0,false,8,2018-09-12,true,catalog,clickrow,endplay
+59_d4784fa5-5961-4272-918f-062730528030,3,11,t_a89b6407-ddfd-4ca2-83ee-9b78b5d73720,false,false,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,clickrow,endplay
+59_d4784fa5-5961-4272-918f-062730528030,4,11,t_02f51114-b9fb-4038-b01a-1f5b5bbf7c15,false,false,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,clickrow,fwdbtn
+59_d4784fa5-5961-4272-918f-062730528030,5,11,t_50ab0887-9df3-4c30-a161-8070931c5d80,false,true,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,fwdbtn,fwdbtn
+59_d4784fa5-5961-4272-918f-062730528030,6,11,t_4b286900-bc8d-45c8-9a38-87522d0de314,false,true,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,fwdbtn,fwdbtn
+59_d4784fa5-5961-4272-918f-062730528030,7,11,t_1bddda08-1887-44cf-be45-7b90bfc94187,false,true,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,fwdbtn,fwdbtn
+59_d4784fa5-5961-4272-918f-062730528030,8,11,t_1546ef94-75df-4fb1-bdce-629103295d05,false,false,false,true,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,fwdbtn,trackdone
+59_d4784fa5-5961-4272-918f-062730528030,9,11,t_818869fc-377e-4f4f-b00b-3e5ebfdd819c,false,true,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,trackdone,fwdbtn
+59_d4784fa5-5961-4272-918f-062730528030,10,11,t_2a63aff8-6547-4aa7-8c37-3e25f4e3b3f5,false,true,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,fwdbtn,fwdbtn
+59_d4784fa5-5961-4272-918f-062730528030,11,11,t_d4512fee-dd67-4b76-bcd6-fbf7df7d41a7,false,true,true,false,0,1,0,0,0,0,false,8,2018-09-12,true,catalog,fwdbtn,fwdbtn

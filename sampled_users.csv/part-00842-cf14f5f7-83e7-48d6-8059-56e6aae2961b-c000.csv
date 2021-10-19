@@ -1,0 +1,13 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,1,12,t_64c3ac03-ec6e-48ab-989d-46564f620108,true,true,true,false,0,0,0,0,0,0,false,9,2018-08-14,true,catalog,fwdbtn,fwdbtn
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,2,12,t_bb59dff3-8b08-4fab-9ac0-ed4f5d3eee57,false,true,true,false,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,fwdbtn,fwdbtn
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,3,12,t_a633b980-9cf1-4bee-88e0-4e165d1db381,false,false,false,true,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,fwdbtn,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,4,12,t_48370b21-fa1f-46b9-ba2e-6c07b37a9d3d,false,false,false,true,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,5,12,t_5f862f48-8458-4516-817e-c23dc48aa1a2,false,false,false,true,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,6,12,t_64b5c814-dcb2-40da-8f2a-14f5b2de82c6,false,false,false,true,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,7,12,t_6b8e21d4-a010-4e03-b7c9-5b9eb78fc6ff,false,false,false,true,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,8,12,t_a633b980-9cf1-4bee-88e0-4e165d1db381,false,false,false,true,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,9,12,t_6b985282-ba0e-4c25-84af-f4a740e3b54d,false,false,false,true,0,1,0,0,0,0,false,9,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,10,12,t_54854b8c-c5cf-4abd-ad05-d79205c0b0b4,false,false,false,true,0,1,0,0,0,0,false,10,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,11,12,t_11e02ce1-64f0-412f-bafa-c748554ca4c9,false,false,false,true,0,1,0,0,0,0,false,10,2018-08-14,true,catalog,trackdone,trackdone
+30_c9b42f2c-5ff1-44b3-8950-df93e761a963,12,12,t_5f862f48-8458-4516-817e-c23dc48aa1a2,false,false,false,true,0,1,0,0,0,0,false,10,2018-08-14,true,catalog,trackdone,trackdone

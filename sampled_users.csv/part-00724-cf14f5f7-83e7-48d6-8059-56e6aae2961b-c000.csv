@@ -1,0 +1,12 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,1,11,t_008279d5-19ef-419e-b651-04031981bd99,true,true,true,false,0,0,0,0,0,0,true,22,2018-09-17,true,user_collection,trackdone,fwdbtn
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,2,11,t_c9afd4a6-c31e-4700-87a4-23b9f88b5fd7,true,true,true,false,0,1,0,0,0,0,true,22,2018-09-17,true,user_collection,fwdbtn,fwdbtn
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,3,11,t_152ba26d-b11b-4090-982a-116930766ca8,true,true,true,false,0,1,0,0,0,0,true,22,2018-09-17,true,user_collection,fwdbtn,backbtn
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,4,11,t_c9afd4a6-c31e-4700-87a4-23b9f88b5fd7,false,false,false,true,0,1,0,0,0,0,true,23,2018-09-17,true,user_collection,backbtn,trackdone
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,5,11,t_152ba26d-b11b-4090-982a-116930766ca8,false,false,false,true,0,1,0,0,0,0,true,23,2018-09-17,true,user_collection,trackdone,trackdone
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,6,11,t_f4c8f089-44f4-40ec-bfb8-21aff0f56700,false,false,true,false,0,1,0,0,0,0,true,23,2018-09-17,true,user_collection,trackdone,remote
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,7,11,t_de0a244d-eff0-4d92-9065-87d25bfcfdb3,false,false,true,false,0,0,1,1,0,0,true,23,2018-09-17,true,user_collection,trackdone,fwdbtn
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,8,11,t_70d491ec-440d-4fbf-87a6-015f038e3935,false,true,true,false,0,1,0,0,0,0,true,23,2018-09-17,true,user_collection,fwdbtn,fwdbtn
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,9,11,t_f84874c9-e7c5-4d53-ac4a-2ae18cfdf505,true,true,true,false,0,1,0,0,0,0,true,23,2018-09-17,true,user_collection,fwdbtn,fwdbtn
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,10,11,t_57a577bd-6a9d-482b-956c-2a916f4b05ab,true,true,true,false,0,1,0,0,0,0,true,23,2018-09-17,true,user_collection,fwdbtn,backbtn
+65_a248f634-d215-404d-a2c0-5e8c94701c0f,11,11,t_f84874c9-e7c5-4d53-ac4a-2ae18cfdf505,false,false,true,false,0,0,1,1,0,0,true,23,2018-09-17,true,user_collection,backbtn,logout

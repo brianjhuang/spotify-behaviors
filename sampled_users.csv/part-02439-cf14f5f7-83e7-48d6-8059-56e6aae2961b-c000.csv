@@ -1,0 +1,13 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,1,12,t_e1528f92-03f3-4397-b349-6a79ba7ad7d1,false,false,false,true,0,0,0,0,0,1,false,14,2018-08-04,true,catalog,clickrow,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,2,12,t_c9a37572-f7d5-4b30-bc26-184b2451939c,false,false,false,true,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,trackdone,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,3,12,t_5b42d170-caab-4e2f-8b08-360d758d4a40,false,false,false,true,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,trackdone,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,4,12,t_17a3d453-9d1a-4078-b231-08466e7cf581,false,false,false,true,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,trackdone,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,5,12,t_65a968af-6eae-4e00-9c60-8417be37009b,false,false,false,true,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,trackdone,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,6,12,t_4f9f40f5-614a-4973-90dc-a3769c756679,false,false,false,true,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,trackdone,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,7,12,t_7050f8b8-b0e7-4686-a225-248d7cb29c23,false,false,false,true,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,trackdone,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,8,12,t_80b5a393-6a69-41f6-bce4-e73903da368c,false,true,true,false,0,0,1,1,0,0,false,14,2018-08-04,true,catalog,trackdone,fwdbtn
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,9,12,t_fe6e2636-c18e-4791-a125-05fe336d2d03,false,false,true,false,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,fwdbtn,fwdbtn
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,10,12,t_54d34403-9306-4f36-999f-f4f33de670b4,true,true,true,false,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,fwdbtn,fwdbtn
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,11,12,t_7050f8b8-b0e7-4686-a225-248d7cb29c23,false,false,false,true,0,1,0,0,0,0,false,14,2018-08-04,true,catalog,fwdbtn,trackdone
+20_cacd7629-878f-4f0e-8583-1a2295eeb704,12,12,t_54d34403-9306-4f36-999f-f4f33de670b4,false,false,true,false,0,0,0,1,0,0,false,14,2018-08-04,true,catalog,trackdone,logout

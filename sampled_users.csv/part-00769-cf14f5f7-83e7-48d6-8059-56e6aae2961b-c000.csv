@@ -1,0 +1,11 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,1,10,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,true,false,0,0,0,0,1,0,true,10,2018-07-26,true,user_collection,appload,trackdone
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,2,10,t_e0f32f32-e1b7-45ec-9adb-2ec4cc7aed43,false,false,false,true,0,1,0,0,0,0,true,10,2018-07-26,true,user_collection,trackdone,trackdone
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,3,10,t_56f70ff8-82bc-401e-bee2-261271942127,false,false,false,true,0,1,0,0,0,0,true,10,2018-07-26,true,user_collection,trackdone,trackdone
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,4,10,t_7a28f354-f3c5-4a0c-889b-c447f196060f,false,false,false,true,0,1,0,0,0,0,true,11,2018-07-26,true,user_collection,trackdone,trackdone
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,5,10,t_4f5146c3-8502-4917-8726-f18bdef90c75,false,false,false,true,0,1,0,0,0,0,true,11,2018-07-26,true,user_collection,trackdone,trackdone
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,6,10,t_e0c8e31f-e8d5-451d-b2a6-f3699eb7ba39,false,false,false,false,0,0,1,1,0,0,true,11,2018-07-26,true,user_collection,trackdone,fwdbtn
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,7,10,t_801cc488-1097-4096-b3fa-b77796adc51a,true,true,true,false,0,1,0,0,0,0,true,11,2018-07-26,true,user_collection,fwdbtn,fwdbtn
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,8,10,t_7bda3b82-73f4-4a60-bf5a-c608be4ad023,false,false,false,true,0,1,0,0,0,0,true,11,2018-07-26,true,user_collection,fwdbtn,trackdone
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,9,10,t_3a6404f1-ca10-426c-835f-b27053ea9683,false,false,false,true,0,0,1,1,0,0,true,11,2018-07-26,true,user_collection,trackdone,trackdone
+11_6effadfa-b4cc-4c2a-ae9b-24ea29aec77f,10,10,t_7d0f8467-835c-4b4f-8f59-61eb2b581cd0,false,false,false,true,0,1,0,0,0,0,true,11,2018-07-26,true,user_collection,trackdone,trackdone
