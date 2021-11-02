@@ -1,0 +1,13 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+18_f2d24932-3680-4fce-b80f-ebed03928706,1,12,t_e0031b0b-d41d-479a-a7ab-ff4e6ed63918,false,true,true,false,0,0,0,0,1,0,false,20,2018-08-01,true,user_collection,appload,endplay
+18_f2d24932-3680-4fce-b80f-ebed03928706,2,12,t_98ced97b-b6ff-4e3e-8d0f-857660fcedc4,false,true,true,false,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,clickrow,endplay
+18_f2d24932-3680-4fce-b80f-ebed03928706,3,12,t_6ab5632e-cac6-4e92-9adb-bb74685572f9,false,false,true,false,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,clickrow,endplay
+18_f2d24932-3680-4fce-b80f-ebed03928706,4,12,t_c5c8dad4-9cef-4fd3-89f6-1376e3a575e1,false,false,false,true,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,clickrow,trackdone
+18_f2d24932-3680-4fce-b80f-ebed03928706,5,12,t_86602ebd-d25a-4922-bcb2-71f1e9ecd22d,false,true,true,false,0,0,1,1,0,0,false,20,2018-08-01,true,user_collection,trackdone,fwdbtn
+18_f2d24932-3680-4fce-b80f-ebed03928706,6,12,t_1cfdca94-28ba-458d-94fa-e526bbd29dfe,false,false,true,false,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,fwdbtn,fwdbtn
+18_f2d24932-3680-4fce-b80f-ebed03928706,7,12,t_557fe7ca-506c-4908-ab00-e6be20ccfeff,false,false,true,false,0,1,0,0,1,0,false,20,2018-08-01,true,user_collection,fwdbtn,fwdbtn
+18_f2d24932-3680-4fce-b80f-ebed03928706,8,12,t_c0e20483-cc4f-45a9-a130-262c3e19ba4e,false,false,true,false,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,fwdbtn,fwdbtn
+18_f2d24932-3680-4fce-b80f-ebed03928706,9,12,t_e3adc69e-00ea-4895-92cb-9b982eca8ac3,false,false,false,true,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,fwdbtn,trackdone
+18_f2d24932-3680-4fce-b80f-ebed03928706,10,12,t_0e164871-d9c3-4c39-9f9f-6a0613742319,false,true,true,false,0,0,1,1,0,0,false,20,2018-08-01,true,user_collection,trackdone,fwdbtn
+18_f2d24932-3680-4fce-b80f-ebed03928706,11,12,t_c4379047-4c6e-453c-95cf-79f020b1d3c9,false,false,false,true,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,fwdbtn,trackdone
+18_f2d24932-3680-4fce-b80f-ebed03928706,12,12,t_dbd3171b-7669-4783-920e-ce3a79234eda,false,false,false,true,0,1,0,0,0,0,false,20,2018-08-01,true,user_collection,trackdone,trackdone

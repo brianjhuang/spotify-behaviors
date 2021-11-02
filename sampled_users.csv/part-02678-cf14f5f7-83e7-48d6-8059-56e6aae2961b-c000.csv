@@ -1,0 +1,12 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,1,11,t_0d7f3968-6229-4d26-a41e-47c9af2bd1a5,false,true,true,false,0,0,0,0,0,0,false,22,2018-07-17,false,editorial_playlist,trackdone,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,2,11,t_7e03d37e-20d0-4cad-9a2e-90d3421e380c,true,true,true,false,0,1,0,0,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,3,11,t_b076fb75-b1bd-44b3-a284-e7db55dddfb9,true,true,true,false,0,1,0,0,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,4,11,t_ceb4e1b4-1cf6-432a-b199-107a0aef045b,true,true,true,false,0,1,0,0,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,5,11,t_47cfab15-2b20-4dbb-91c1-db3b8cb70036,true,true,true,false,0,1,0,0,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,6,11,t_04f30e38-1517-4627-93be-74039bd8b5dd,true,true,true,false,0,0,1,1,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,7,11,t_696ab8a4-321b-46fc-ac04-36fc07d37a30,true,true,true,false,0,1,0,0,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,8,11,t_a3439f62-a673-4fb9-b72c-d1158373e3fd,true,true,true,false,0,0,1,1,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,9,11,t_ab40acd6-2781-41e2-8c38-61cf49e02999,true,true,true,false,0,0,1,1,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,10,11,t_8db3f89c-510b-4e30-87bc-887502bd9030,true,true,true,false,0,0,1,1,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,fwdbtn
+3_ff5860d4-891c-4a1d-b882-0597a0adb20c,11,11,t_abe577df-bc3e-48ff-a13c-f2fd7a295ba6,false,false,false,true,0,0,1,1,0,0,false,22,2018-07-17,false,editorial_playlist,fwdbtn,trackdone

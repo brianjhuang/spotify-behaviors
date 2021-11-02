@@ -1,0 +1,13 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,1,12,t_333bfdd6-31bb-40b4-b3fe-fdb1f7dc1d82,false,false,false,false,0,0,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,trackdone,fwdbtn
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,2,12,t_bf61f7df-6d91-4eed-878d-45ece8e4804d,true,true,true,false,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,fwdbtn,fwdbtn
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,3,12,t_3c50e958-9829-44cc-a7aa-e29a47937ac5,false,false,false,true,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,fwdbtn,trackdone
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,4,12,t_6ef80f03-1058-4ebe-bb7e-c78dd7702419,false,false,false,true,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,trackdone,trackdone
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,5,12,t_34e8e659-1663-4e09-ab26-cd011272d3ac,false,false,false,true,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,trackdone,trackdone
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,6,12,t_6901f27d-6443-47b4-bf86-0c819f29f8f2,true,true,true,false,0,0,1,1,0,0,false,19,2018-07-22,true,personalized_playlist,trackdone,fwdbtn
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,7,12,t_5c87c7e8-b2e7-4ac6-bbd6-923f20119e5a,true,true,true,false,0,0,0,1,0,0,false,19,2018-07-22,true,personalized_playlist,fwdbtn,backbtn
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,8,12,t_6901f27d-6443-47b4-bf86-0c819f29f8f2,true,true,true,false,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,backbtn,fwdbtn
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,9,12,t_5c87c7e8-b2e7-4ac6-bbd6-923f20119e5a,true,true,true,false,0,0,0,1,0,0,false,19,2018-07-22,true,personalized_playlist,fwdbtn,fwdbtn
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,10,12,t_a543bbe7-0d87-4bf5-819f-06f559a60a32,true,true,true,false,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,fwdbtn,fwdbtn
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,11,12,t_c165d5e4-2e83-4797-96da-effb803ddd14,false,false,false,true,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,fwdbtn,trackdone
+7_0a206e95-076b-4b9b-b7d8-e5c065a6858b,12,12,t_5541536f-b85c-4e39-9a6f-fbf4c74cb8bc,false,false,false,true,0,1,0,0,0,0,false,19,2018-07-22,true,personalized_playlist,trackdone,trackdone

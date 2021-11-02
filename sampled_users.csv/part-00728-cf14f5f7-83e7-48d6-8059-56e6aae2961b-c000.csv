@@ -1,0 +1,12 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+0_b6800171-f597-4873-bda5-8df29761738e,1,11,t_5680daac-1bf7-46fc-b0be-8ed61695fea9,true,true,true,false,0,0,0,0,0,0,false,14,2018-07-15,true,user_collection,fwdbtn,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,2,11,t_a66d6900-ff0b-4c87-8514-84e10e76a12c,true,true,true,false,0,0,1,1,0,0,false,14,2018-07-15,true,user_collection,fwdbtn,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,3,11,t_8ab03026-5d20-4f1d-9fcb-f80079c75818,false,false,true,false,0,1,0,0,0,0,false,14,2018-07-15,true,user_collection,fwdbtn,endplay
+0_b6800171-f597-4873-bda5-8df29761738e,4,11,t_79b94235-0b26-4ae0-97cc-a45ce32c0ebf,true,true,true,false,1,1,0,0,0,0,true,14,2018-07-15,true,editorial_playlist,appload,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,5,11,t_9114834a-32fd-4562-b684-3091927cd87f,true,true,true,false,0,1,0,0,0,0,true,14,2018-07-15,true,editorial_playlist,fwdbtn,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,6,11,t_a8d9544e-08b6-4220-ba86-68aac4e90891,false,true,true,false,0,1,0,0,0,0,true,14,2018-07-15,true,editorial_playlist,fwdbtn,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,7,11,t_cfc1eda7-0768-4d94-9909-6dec6b939230,true,true,true,false,0,1,0,0,0,0,true,14,2018-07-15,true,editorial_playlist,fwdbtn,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,8,11,t_117fe800-cc46-47f2-9bfb-c11335f6b2d0,true,true,true,false,0,1,0,0,0,0,true,14,2018-07-15,true,editorial_playlist,fwdbtn,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,9,11,t_0a36a686-c0b7-475b-8e15-6a92c5af158f,false,true,true,false,0,1,0,0,0,0,true,14,2018-07-15,true,editorial_playlist,fwdbtn,fwdbtn
+0_b6800171-f597-4873-bda5-8df29761738e,10,11,t_b241786b-a6e9-47bc-bf1a-8dd2b25c6c00,false,true,true,false,0,0,1,1,0,0,true,14,2018-07-15,true,editorial_playlist,fwdbtn,endplay
+0_b6800171-f597-4873-bda5-8df29761738e,11,11,t_e965ceea-ba4b-4480-b833-8924a0d30e21,false,false,false,true,1,1,0,0,0,0,false,14,2018-07-15,true,catalog,clickrow,trackdone

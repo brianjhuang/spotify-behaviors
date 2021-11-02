@@ -1,0 +1,11 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+23_ba2228a3-64c9-4df0-affc-0103afff056f,1,10,t_a9692823-509b-416b-b2f8-7d3126aab245,false,true,true,false,0,0,0,0,3,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,2,10,t_ed1e3c51-92d4-45a3-b8e9-6b1c760584b0,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,3,10,t_cd661951-833f-4392-b101-f83568a0ae70,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,4,10,t_67b2bf5e-c15b-473e-8e4a-df9020b50cdc,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,5,10,t_1b50595c-0a5f-48c3-bc1d-6dc457ef1a1f,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,6,10,t_52df9ac9-5ac5-435f-9505-caf89d1f3b79,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,7,10,t_6f788558-812f-4d43-9ac3-59d498267215,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,8,10,t_a4a6cb9b-ca2f-4904-b913-c75a9421cfe0,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,9,10,t_5ee6e9b5-44e1-488f-b874-75bb678bdf42,true,true,true,false,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,fwdbtn
+23_ba2228a3-64c9-4df0-affc-0103afff056f,10,10,t_813fd49d-8a4a-4ba3-8762-ccdb84afa166,false,false,false,true,0,1,0,0,0,0,true,8,2018-08-07,true,user_collection,fwdbtn,trackdone

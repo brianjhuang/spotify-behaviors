@@ -1,0 +1,13 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,1,12,t_bacf06d3-9185-4183-84ea-ff0db51475ce,true,true,true,false,0,0,0,0,0,0,true,18,2018-08-21,true,user_collection,trackdone,fwdbtn
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,2,12,t_b8c9104d-4bd1-4397-8833-ef645f549690,true,true,true,false,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,fwdbtn,fwdbtn
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,3,12,t_2bc5e24c-1928-475a-a296-381af8333125,true,true,true,false,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,fwdbtn,fwdbtn
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,4,12,t_d1334406-c02b-4db6-a48b-dd7cd3a23a28,true,true,true,false,0,0,1,1,0,0,true,18,2018-08-21,true,user_collection,fwdbtn,fwdbtn
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,5,12,t_e0af3262-14db-4f3b-98eb-79dec09fb3c8,false,false,false,true,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,fwdbtn,trackdone
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,6,12,t_d65c8994-4d0c-4067-8d09-c180dd7330be,false,false,false,true,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,trackdone,trackdone
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,7,12,t_c0da122c-2ffb-4ed3-9c90-ac3f93291c45,false,false,false,true,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,trackdone,trackdone
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,8,12,t_0cd57798-9d12-4d6d-ab04-db89ed35a937,false,false,false,true,0,0,1,1,0,0,true,18,2018-08-21,true,user_collection,trackdone,trackdone
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,9,12,t_fb6d65f6-17b0-4bab-b2d6-c2752117d84a,false,false,false,true,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,trackdone,trackdone
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,10,12,t_42d15744-c948-489e-a92b-9e664c170b57,false,false,false,true,0,0,1,1,0,0,true,18,2018-08-21,true,user_collection,trackdone,trackdone
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,11,12,t_bd522960-99ec-4bf4-a9e1-54decc089497,false,false,false,true,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,trackdone,trackdone
+38_0e3fbcfb-0c3d-457b-9a68-a47ab8c8f75f,12,12,t_046d433e-7980-40d7-9f6a-d98e0957d63b,false,false,false,true,0,1,0,0,0,0,true,18,2018-08-21,true,user_collection,trackdone,trackdone

@@ -1,0 +1,13 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,1,12,t_78b908e3-62db-4021-ac90-2ed146bcea8d,false,false,false,true,0,0,0,0,0,0,false,19,2018-08-04,true,editorial_playlist,clickrow,trackdone
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,2,12,t_29a3895e-2c91-49a6-9383-6a71c597390d,false,true,true,false,0,0,1,1,0,0,true,19,2018-08-04,true,editorial_playlist,trackdone,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,3,12,t_77b02acb-1b1f-4b36-b8fc-2c3e01892b9a,true,true,true,false,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,4,12,t_659874f0-a356-4492-8edd-90c9a6c92c10,true,true,true,false,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,5,12,t_ff2c96eb-7063-4094-8d91-c45a5f3eb230,false,false,false,true,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,trackdone
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,6,12,t_0bbc44a3-d25a-4a9b-b29e-89c46745ed90,false,false,false,true,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,trackdone,trackdone
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,7,12,t_af5d7e27-ba40-445a-9a6d-df425799f320,false,true,true,false,0,0,1,1,0,0,true,19,2018-08-04,true,editorial_playlist,trackdone,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,8,12,t_8cf71d62-30fe-4bab-854b-812e54a0b6aa,true,true,true,false,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,9,12,t_5b2803f8-eee0-4aa9-86ac-7b0f25e9c2eb,true,true,true,false,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,10,12,t_ec426fd4-52d9-4bf1-8d7f-040a9bae7dfd,true,true,true,false,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,11,12,t_cb4b1b03-c44f-4a5d-b381-5ebe9af68df0,true,true,true,false,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,fwdbtn
+21_d152ac49-8c33-4b64-9651-8927f3b4fb08,12,12,t_81b9a202-281e-42a4-b068-e0c0f44e1e4d,true,true,true,false,0,1,0,0,0,0,true,19,2018-08-04,true,editorial_playlist,fwdbtn,fwdbtn

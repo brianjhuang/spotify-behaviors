@@ -1,0 +1,12 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,1,11,t_c3a8b7bf-f641-4ea1-a5d9-7c1922d1acf8,false,false,true,false,0,0,0,0,0,0,true,11,2018-08-09,true,catalog,trackdone,fwdbtn
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,2,11,t_f6c4db45-8008-48c8-a483-61aa34a24d7c,true,true,true,false,0,1,0,0,0,0,true,11,2018-08-09,true,catalog,fwdbtn,fwdbtn
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,3,11,t_ed4e1ad0-40f4-4f8b-8b6b-6ef0c5a2b3c9,true,true,true,false,0,1,0,0,0,0,true,11,2018-08-09,true,catalog,fwdbtn,fwdbtn
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,4,11,t_2262c6aa-1ff8-4bc9-b2f9-e75219ebfa0a,true,true,true,false,0,1,0,0,0,0,true,11,2018-08-09,true,catalog,fwdbtn,fwdbtn
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,5,11,t_5ad147a9-3fdd-4e3a-a90e-e390f098455c,true,true,true,false,0,1,0,0,0,0,true,11,2018-08-09,true,catalog,fwdbtn,fwdbtn
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,6,11,t_6d852ba0-f1c7-404d-ad87-3d4926bf21c9,true,true,true,false,0,1,0,0,0,0,true,11,2018-08-09,true,catalog,fwdbtn,fwdbtn
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,7,11,t_c2f952cc-a800-4367-9797-254bbeba74e3,false,true,true,false,0,0,1,1,0,0,true,11,2018-08-09,true,catalog,fwdbtn,endplay
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,8,11,t_a141978a-9e97-43a3-98f8-86548a26cb71,false,true,true,false,0,1,0,0,0,0,true,11,2018-08-09,true,catalog,clickrow,endplay
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,9,11,t_f761b4fa-184c-4f8b-ad60-01d8643acae4,true,true,true,false,1,1,0,0,1,0,true,11,2018-08-09,true,catalog,clickrow,endplay
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,10,11,t_d60f8a0a-ee0e-4ae4-b690-f3b6de4dc025,false,false,false,true,0,0,1,1,0,0,true,12,2018-08-09,true,catalog,clickrow,trackdone
+25_9a0fee71-f247-4ef1-aac2-0c1728c1b419,11,11,t_21ecde73-78f3-4404-9237-12cf81ffe90c,false,false,false,true,0,1,0,0,0,0,true,12,2018-08-09,true,catalog,trackdone,trackdone

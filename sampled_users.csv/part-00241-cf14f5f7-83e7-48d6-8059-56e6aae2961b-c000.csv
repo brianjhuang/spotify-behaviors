@@ -1,0 +1,11 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,1,10,t_8431b76a-8722-4ded-91fd-0ef7c527465d,false,false,false,true,0,0,0,0,0,2,false,19,2018-09-17,true,user_collection,fwdbtn,trackdone
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,2,10,t_ad1eac64-1fd7-4894-910f-551c746333a5,false,false,false,false,0,0,1,1,0,1,false,19,2018-09-17,true,user_collection,trackdone,backbtn
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,3,10,t_8431b76a-8722-4ded-91fd-0ef7c527465d,false,false,false,true,0,1,0,0,0,0,false,19,2018-09-17,true,user_collection,backbtn,trackdone
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,4,10,t_ad1eac64-1fd7-4894-910f-551c746333a5,false,false,false,false,0,0,1,1,0,0,false,19,2018-09-17,true,user_collection,trackdone,endplay
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,5,10,t_24374be8-ea7c-448b-8903-2a7594a3e358,false,false,true,false,1,1,0,0,0,0,false,19,2018-09-17,true,catalog,clickrow,fwdbtn
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,6,10,t_ad18d76a-0d74-4e97-9458-6b5ed7da7cfb,true,true,true,false,0,1,0,0,0,0,false,19,2018-09-17,true,catalog,fwdbtn,backbtn
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,7,10,t_24374be8-ea7c-448b-8903-2a7594a3e358,false,false,true,false,0,1,0,0,0,0,false,19,2018-09-17,true,catalog,backbtn,endplay
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,8,10,t_24374be8-ea7c-448b-8903-2a7594a3e358,false,false,false,true,0,1,0,0,0,0,false,19,2018-09-17,true,catalog,clickrow,trackdone
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,9,10,t_ad18d76a-0d74-4e97-9458-6b5ed7da7cfb,false,true,true,false,0,1,0,0,0,0,false,19,2018-09-17,true,catalog,trackdone,endplay
+65_f1a08646-9603-4534-9ee8-b15316ec0bf4,10,10,t_2e8e5686-ad8a-4bfd-aa48-9b5719e807dd,false,false,true,false,1,1,0,0,0,0,false,19,2018-09-17,true,user_collection,clickrow,logout

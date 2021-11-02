@@ -1,0 +1,11 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,1,10,t_bd32842c-1364-469f-b1b3-a4574123df9f,false,false,false,true,0,0,0,0,0,0,false,20,2018-07-30,true,editorial_playlist,trackdone,trackdone
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,2,10,t_bcd6ec54-84dd-4669-9684-37884189af52,false,false,false,true,0,1,0,0,0,0,false,20,2018-07-30,true,editorial_playlist,trackdone,trackdone
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,3,10,t_b6f7d465-a1b9-41b6-a70d-0dafa613d9c6,false,false,true,false,0,0,1,1,0,1,false,20,2018-07-30,true,editorial_playlist,trackdone,backbtn
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,4,10,t_bcd6ec54-84dd-4669-9684-37884189af52,false,false,false,true,0,1,0,0,0,0,false,20,2018-07-30,true,editorial_playlist,backbtn,trackdone
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,5,10,t_b6f7d465-a1b9-41b6-a70d-0dafa613d9c6,false,true,true,false,0,0,1,1,0,1,false,20,2018-07-30,true,editorial_playlist,trackdone,backbtn
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,6,10,t_bcd6ec54-84dd-4669-9684-37884189af52,false,false,false,true,0,1,0,0,0,0,false,20,2018-07-30,true,editorial_playlist,backbtn,trackdone
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,7,10,t_b6f7d465-a1b9-41b6-a70d-0dafa613d9c6,false,true,true,false,0,0,1,1,0,0,false,20,2018-07-30,true,editorial_playlist,trackdone,fwdbtn
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,8,10,t_f8fefff9-3db1-4883-8b66-09ef4266e91e,false,false,false,true,0,1,0,0,0,0,false,20,2018-07-30,true,editorial_playlist,fwdbtn,trackdone
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,9,10,t_a4adc913-911b-47b5-bdcd-cd4a6a62c69f,false,false,false,true,0,1,0,0,0,0,false,20,2018-07-30,true,editorial_playlist,trackdone,trackdone
+16_4995bebb-98ba-47ed-b606-237dcfeba40d,10,10,t_ca921db2-4eb9-4024-911d-62233d78c017,false,false,false,true,0,1,0,0,0,0,false,20,2018-07-30,true,editorial_playlist,trackdone,trackdone

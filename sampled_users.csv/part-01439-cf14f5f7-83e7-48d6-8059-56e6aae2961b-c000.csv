@@ -1,0 +1,15 @@
+session_id,session_position,session_length,track_id_clean,skip_1,skip_2,skip_3,not_skipped,context_switch,no_pause_before_play,short_pause_before_play,long_pause_before_play,hist_user_behavior_n_seekfwd,hist_user_behavior_n_seekback,hist_user_behavior_is_shuffle,hour_of_day,date,premium,context_type,hist_user_behavior_reason_start,hist_user_behavior_reason_end
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,1,14,t_50bc952a-8999-4866-84d6-fadc5576a9b3,false,false,true,false,0,0,0,0,0,1,false,8,2018-09-14,true,catalog,clickrow,endplay
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,2,14,t_29a3895e-2c91-49a6-9383-6a71c597390d,false,false,true,false,0,1,0,0,0,1,false,8,2018-09-14,true,catalog,clickrow,endplay
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,3,14,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,false,true,0,1,0,0,0,0,false,8,2018-09-14,true,catalog,clickrow,trackdone
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,4,14,t_549e40e0-98e0-47bf-89f8-57c8563c726d,true,true,true,false,1,1,0,0,0,0,false,8,2018-09-14,true,radio,clickrow,endplay
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,5,14,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,false,true,1,1,0,0,0,0,false,8,2018-09-14,true,catalog,clickrow,trackdone
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,6,14,t_549e40e0-98e0-47bf-89f8-57c8563c726d,false,true,true,false,1,1,0,0,0,1,false,8,2018-09-14,true,radio,clickrow,endplay
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,7,14,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,false,true,1,0,0,1,0,2,false,8,2018-09-14,true,catalog,clickrow,endplay
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,8,14,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,true,false,0,0,0,1,0,0,false,9,2018-09-14,true,catalog,clickrow,endplay
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,9,14,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,false,true,0,1,0,0,0,1,false,9,2018-09-14,true,catalog,clickrow,trackdone
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,10,14,t_07c3ef31-03e8-465c-b8be-c7e5d3bb72c9,false,true,true,false,0,0,1,1,0,1,false,9,2018-09-14,true,catalog,trackdone,backbtn
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,11,14,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,false,true,0,1,0,0,0,1,false,9,2018-09-14,true,catalog,backbtn,trackdone
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,12,14,t_07c3ef31-03e8-465c-b8be-c7e5d3bb72c9,true,true,true,false,0,1,0,0,0,0,false,9,2018-09-14,true,catalog,trackdone,backbtn
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,13,14,t_05967377-59f1-48d0-aa03-9b214d735cfb,false,false,false,true,0,1,0,0,0,3,false,9,2018-09-14,true,catalog,backbtn,trackdone
+61_530a6dae-cfac-4f88-9afa-308c70779b8c,14,14,t_07c3ef31-03e8-465c-b8be-c7e5d3bb72c9,true,true,true,false,0,0,1,1,0,0,false,9,2018-09-14,true,catalog,trackdone,backbtn
