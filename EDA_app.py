@@ -2,6 +2,7 @@ import pandas as pd
 import streamlit as st
 import os
 
+<<<<<<< HEAD
 st.set_page_config(layout='wide')
 spotify_image_left, spotify_image_right = st.columns([1,8])
 
@@ -10,6 +11,10 @@ with spotify_image_left:
 
 #EDA / Data Cleaning
 st.markdown("# EDA / Data Cleaning")
+=======
+#EDA / Data Cleaning
+st.markdown("## __Data Cleaning__")
+>>>>>>> 7b5058b6531eceb316f715c3d8ebe1c5768136f7
 
 st.markdown("""
 ### Let's first look at our data...
@@ -19,10 +24,10 @@ split samples into training and test sets to apply our models.
 
 	""")
 
-spark_left, spark_right = st.columns(2)
+spark_left, spark_right = st.beta_columns(2)
 
 with spark_left:
-	st.image("spotify_streamlit_photos/pyspark_screenshot.jpg")
+	st.image("pyspark_screenshot.jpg")
 
 with spark_right:
 	st.write("This is code for how we came up with the samples in pyspark.")
@@ -44,7 +49,7 @@ df = pd.merge(log_data,track_data,on='track_id',how='left')
 st.write(df.head(100))
 
 #display the columns of track and log data
-log_left, track_right = st.columns(2)
+log_left, track_right = st.beta_columns(2)
 
 with log_left:
 	st.markdown("### Log Data Columns")
@@ -54,36 +59,79 @@ with track_right:
 	st.markdown("### Track Data Columns")
 	st.write(track_data.columns)
 
-link = st.expander("To better understand the meaning of each column, follow this link.")
+link = st.beta_expander("To better understand the meaning of each column, follow this link.")
 link.write('https://drive.google.com/file/d/1aR6g0hGhue3pGZ81buEXvRCFLmdMfFep/view?usp=sharing')
 
 
 st.write("Among the Log Data, skip results are given by the columns 'not_skipped', \
-	'skip_1','skip_2', and 'skip_3'. As a result these, columns must be dropped for \
-	our model to better predict the outcomes without such giveaways.")
+	'skip_1','skip_2', and 'skip_3'. These columns are combined into one column with boolean values that \
+	shows whether the user has skipped the song.")
 
-st.write("The columns 'skip_1', 'skip_2', 'skip_3', and 'not_skipped' are dropped as they give skip behavior away.")
-st.write("These are the updated columns that will be used for our model.")
+st.write("The column 'hist_user_behavior_reason_end' directly determines users' skip behavior. As a result, \
+it is dropped for our model to better predict the outcomes without such giveaways. ")
 
 #get_skip
-st.markdown("""
-### Analyzing duration of song with skips
-	""")
-def get_skip(df):
-    if df['not_skipped'] == 1:
-        return 'not skipped'
-    else:
-        return 'skipped'
-skip_info = df.apply(get_skip, axis = 1)
-df = df.assign(skip_type = skip_info)
+st.markdown("""## __EDA__
+We performed exploratory data analysis to explore the patterns between different features \
+and users' skipping behavior""")
 
-duration_left, duration_right = st.columns(2)
+st.markdown("#### Overall Skip Behavior")
+skip_left, skip_right = st.beta_columns(2)
+
+with skip_left:
+	st.image("skip_eda.png")
+with skip_right:
+	st.write("In our sample dataset, there are 111996 skipped entries and 55884 not_skipped entries.")
+
+st.markdown("#### pause_before_play vs. Skip Behavior")
+pause_left, pause_right = st.beta_columns(2)
+with pause_left:
+	st.image("pause_eda.png")
+	st.caption("True percentage of users not skipping the current song, grouped by how long of a pause \
+	the user takes before playing the current track.")
+with pause_right:
+	st.image("pause_eda_plot.png")
+	st.caption("Boxplot showing the number of users who skipped and not skipped grouped by how long of a pause \
+	the user takes before playing the current track.")
+
+st.markdown("#### Premium vs. Skip Behavior")
+premium_left, premium_right = st.beta_columns(2)
+with premium_left:
+	st.image("premium_eda.png")
+	st.caption("True percentage of users not skipping the current song, grouped by whether the user is premium or not.")
+with premium_right:
+	st.image("premium_eda_plot.png")
+	st.caption("Boxplot showing the number of users who skipped and not skipped grouped by whether the user is premium or not.")
+
+st.markdown("#### Shuffle vs. Skip Behavior")
+shuffle_left, shuffle_right = st.beta_columns(2)
+with shuffle_left:
+	st.image("shuffle_eda.png")
+	st.caption("True percentage of users not skipping the current song, grouped by whether the user is in shuffle mode.")
+with shuffle_right:
+	st.image("shuffle_eda_plot.png")
+	st.caption("Boxplot showing the number of users who skipped and not skipped grouped by whether the user is in \
+	shuffle mode or not.")
+
+st.markdown("""
+### Tracks' features vs. Skip Behavior
+	""")
+# def get_skip(df):
+#     if df['not_skipped'] == 1:
+#         return 'not skipped'
+#     else:
+#         return 'skipped'
+# skip_info = df.apply(get_skip, axis = 1)
+# df = df.assign(skip_type = skip_info)
+
+duration_left, duration_right = st.beta_columns(2)
 
 with duration_left:
-	st.image("spotify_streamlit_photos/danceability_boxplot.jpg")
-	st.caption("Data exploration to analyze skip behavior depending on dacibility.")
+	st.image("danceability_boxplot.jpg")
+	st.caption("Boxplot showing the relationship between a track's danceability and users' skip behavior.")
 
 with duration_right:
+<<<<<<< HEAD
 	st.image("spotify_streamlit_photos/duration_boxplot.jpg")
 	st.caption("Data exploration of whether the duration of a song plays a part in skip behavior.")
 
@@ -96,3 +144,7 @@ with music_bar:
 with music_bar_right:
 	st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
 st.progress(10)
+=======
+	st.image("duration_boxplot.jpg")
+	st.caption("Boxplot showing the relationship between a track's duration and users' skip behavior")
+>>>>>>> 7b5058b6531eceb316f715c3d8ebe1c5768136f7
