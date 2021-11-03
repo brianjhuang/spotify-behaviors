@@ -3,40 +3,105 @@ import pandas as pd
 import numpy as np
 import streamlit.components.v1 as components
 
-st.title('Spotify Behaviors')
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import FunctionTransformer
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.compose import ColumnTransformer
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
 
-components.html(
-"""
-<div class="mF7iSITxB6KQzvdXe4qJ">
-  <div class="player-controls" dir="ltr" aria-label="Player controls">
-    <div class="player-controls__buttons">
-      <div class="player-controls__left">
-        <button class="OSNOtcFz_LbegO1zggsb" role="switch" aria-checked="false" aria-label="Enable shuffle" data-testid="control-button-shuffle" style="--button-size:32px;"><svg role="img" height="16" width="16" viewBox="0 0 16 16"
-            class="Svg-sc-1bi12j5-0 gSLhUO">
-            <path
-              d="M4.5 6.8l.7-.8C4.1 4.7 2.5 4 .9 4v1c1.3 0 2.6.6 3.5 1.6l.1.2zm7.5 4.7c-1.2 0-2.3-.5-3.2-1.3l-.6.8c1 1 2.4 1.5 3.8 1.5V14l3.5-2-3.5-2v1.5zm0-6V7l3.5-2L12 3v1.5c-1.6 0-3.2.7-4.2 2l-3.4 3.9c-.9 1-2.2 1.6-3.5 1.6v1c1.6 0 3.2-.7 4.2-2l3.4-3.9c.9-1 2.2-1.6 3.5-1.6z">
-            </path>
-          </svg></button>
-        <button class="vBPFl8zuUaCexgJTw8Uc" aria-label="Previous" style="--button-size:32px;" aria-expanded="false"><svg role="img" height="16" width="16" viewBox="0 0 16 16" class="Svg-sc-1bi12j5-0 gSLhUO">
-            <path d="M13 2.5L5 7.119V3H3v10h2V8.881l8 4.619z"></path>
-          </svg></button>
-      </div>
-      <button class="gro_tSi7cwspepH0as03" aria-label="Pause" data-testid="control-button-pause" style="--button-size:32px;" aria-expanded="false"><svg role="img" height="16" width="16" viewBox="0 0 16 16" class="Svg-sc-1bi12j5-0 gSLhUO">
-          <path fill="none" d="M0 0h16v16H0z"></path>
-          <path d="M3 2h3v12H3zm7 0h3v12h-3z"></path>
-        </svg>
-      </button>
-      <div class="player-controls__right">
-        <button class="vwGw2RO2v__qDU_9c5PE" aria-label="Next" data-testid="control-button-skip-forward" style="--button-size:32px;" aria-expanded="false"><svg role="img" height="16" width="16" viewBox="0 0 16 16" class="Svg-sc-1bi12j5-0 gSLhUO">
-            <path d="M11 3v4.119L3 2.5v11l8-4.619V13h2V3z"></path>
-          </svg></button>
-        <button class="__1BGhJvHnvqYTPyG074" role="checkbox" aria-checked="false" aria-label="Enable repeat" data-testid="control-button-repeat" style="--button-size:32px;" aria-expanded="false"><svg role="img" height="16" width="16"
-            viewBox="0 0 16 16" class="Svg-sc-1bi12j5-0 gSLhUO">
-            <path d="M5.5 5H10v1.5l3.5-2-3.5-2V4H5.5C3 4 1 6 1 8.5c0 .6.1 1.2.4 1.8l.9-.5C2.1 9.4 2 9 2 8.5 2 6.6 3.6 5 5.5 5zm9.1 1.7l-.9.5c.2.4.3.8.3 1.3 0 1.9-1.6 3.5-3.5 3.5H6v-1.5l-3.5 2 3.5 2V13h4.5C13 13 15 11 15 8.5c0-.6-.1-1.2-.4-1.8z">
-            </path>
-          </svg></button>
-      </div>
-    </div>
+#default page setup
+st.set_page_config(layout='wide')
+spotify_image_left, spotify_image_right = st.columns([1,8])
 
-"""
+with spotify_image_left:
+  spotify_logo = st.image("spotify.png")
+
+
+st.markdown('# Spotify Behavior Model')
+
+#BASELINE sklearn model, FEEL FREE TO EDIT
+log_data = pd.read_csv("data/training_set/log_mini.csv")
+track_data = pd.read_csv("data/track_features/tf_mini.csv")
+log_data = log_data.rename(columns = {'track_id_clean':'track_id'})
+
+df = pd.merge(log_data,track_data,on='track_id',how='left')
+
+model_left, model_right = st.columns(2)
+
+with model_left:
+  st.markdown("## __Sklearn Model__ ")
+  st.write("Using Sklearn, a machine learning package used alongside python, we implemented \
+  Logistic Regression and Random Forest Classifier techniques to predict skip behavior \
+  given specific musical tracks.")
+
+with model_right:
+  st.markdown('### Interested in the code?')
+  with st.expander("Click here to expand."):
+    st.image('spotify_streamlit_photos/model_code.jpg')
+    
+
+log_data['not_skipped'] = log_data['not_skipped'].apply(lambda x: 1 if x == True else 0)
+
+log_data['premium']= log_data['premium'].apply(lambda x: 1 if x is True else 0)
+log_data['hist_user_behavior_is_shuffle'] = log_data['hist_user_behavior_is_shuffle'].apply(lambda x: 1 if x is True else 0)
+
+as_is = ['session_position', 'session_length','hist_user_behavior_is_shuffle',
+       'hour_of_day','premium','duration', 
+       'release_year', 'us_popularity_estimate', 'acousticness',
+       'beat_strength', 'bounciness', 'danceability', 'dyn_range_mean',
+       'energy', 'flatness', 'instrumentalness', 'liveness', 'loudness',
+       'mechanism', 'key', 'organism', 'speechiness', 'tempo',
+       'time_signature', 'valence', 'acoustic_vector_0', 'acoustic_vector_1',
+       'acoustic_vector_2', 'acoustic_vector_3', 'acoustic_vector_4',
+       'acoustic_vector_5', 'acoustic_vector_6', 'acoustic_vector_7', 
+       'context_switch', 'no_pause_before_play', 'short_pause_before_play',
+       'long_pause_before_play', 'hist_user_behavior_n_seekfwd',
+       'hist_user_behavior_n_seekback']
+ohe = ['mode','context_type', 'hist_user_behavior_reason_start']
+
+preproc = ColumnTransformer(
+    transformers = [
+        ('as_is', FunctionTransformer(lambda x: x), as_is),
+        ('one_hot', OneHotEncoder(handle_unknown = 'ignore'), ohe)
+    ]
 )
+
+to_predict = df['not_skipped']
+
+pl = Pipeline(steps = [('preprocessor', preproc), ('classifier', DecisionTreeClassifier(max_depth = 10))])
+x_train, x_test, y_train, y_test = train_test_split(df.drop('not_skipped', axis = 1), df['not_skipped'], test_size= 0.2)
+model = pl.fit(x_train, y_train)
+predictions = model.predict(x_test)
+
+predict_col1, predict_col2, predict_col3, predict_col4 = st.columns(4)
+
+with predict_col1:
+  predict_button = st.button("Predict")
+with predict_col2:
+  st.write("< interact with this button!")
+
+if predict_button:
+
+  sk_col1, sk_col2, sk_col3, sk_col4 = st.columns(4)
+
+  with sk_col1:
+    st.write(predictions)
+  with sk_col2:
+    score = pl.score(x_test, y_test)
+    st.write(score)
+    st.write("The prediction accuracy score is " + str(score) + "!")
+
+#spotify play area
+bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
+
+with music_bar:
+  play_button = st.image("spotify_streamlit_photos/spotify_play_button.png")
+  # if play_button:
+  #   play_button = st.image("pause_button.png")
+with music_bar_right:
+  st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
+st.progress(40)

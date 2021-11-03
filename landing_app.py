@@ -1,33 +1,29 @@
 import streamlit as st
 import pandas as pd
-from PIL import Image
 
 #creates wider page setup
 st.set_page_config(layout="wide")
 
-spotify_image_left, spotify_image_right = st.columns([1,8])
+spotify_image_left, spotify_image_mid, spotify_image_right = st.columns([8,5,8])
 
-with spotify_image_left:
+with spotify_image_mid:
 	spotify_logo = st.image("spotify.png")
 
-intro_left, intro_right = st.columns([3,1])
+intro_left, intro_mid, intro_right = st.columns([1,3,1])
 
-with intro_left:
+with intro_mid:
 	st.markdown("#  Will You Skip The Next Song?")
-	st.write("This project focues on analyzing the recommender systems among \
+	st.markdown("""
+		This project focuses on analyzing the recommender systems among \
 		Spotify's application, a popular music streaming service. To determine\
-		 how Spotify is able to recommend songs to their listeners, we will \
+		 how Spotify is able to recommend songs to their listeners and create \
+		 personal playlists geared towards their listeners, we will \
 		 look at specific musical traits among tracks that listeners \
 		 have listened to, in order to predict whether they will play \
-		 through or skip a particular song.")
+		 through or skip a particular song. """)
 
 
 st.markdown('#')
-st.markdown('#')
-st.markdown('#')
-st.markdown('#')
-st.markdown('#')
-
 
 bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
 
