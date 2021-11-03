@@ -2,6 +2,8 @@ import pandas as pd
 import streamlit as st
 import os
 
+st.set_page_config(layout='wide')
+
 #EDA / Data Cleaning
 st.markdown("## __EDA / Data Cleaning__")
 
@@ -13,10 +15,10 @@ split samples into training and test sets to apply our models.
 
 	""")
 
-spark_left, spark_right = st.beta_columns(2)
+spark_left, spark_right = st.columns(2)
 
 with spark_left:
-	st.image("pyspark_screenshot.jpg")
+	st.image("spotify_streamlit_photos/pyspark_screenshot.jpg")
 
 with spark_right:
 	st.write("This is code for how we came up with the samples in pyspark.")
@@ -38,7 +40,7 @@ df = pd.merge(log_data,track_data,on='track_id',how='left')
 st.write(df.head(100))
 
 #display the columns of track and log data
-log_left, track_right = st.beta_columns(2)
+log_left, track_right = st.columns(2)
 
 with log_left:
 	st.markdown("### Log Data Columns")
@@ -48,7 +50,7 @@ with track_right:
 	st.markdown("### Track Data Columns")
 	st.write(track_data.columns)
 
-link = st.beta_expander("To better understand the meaning of each column, follow this link.")
+link = st.expander("To better understand the meaning of each column, follow this link.")
 link.write('https://drive.google.com/file/d/1aR6g0hGhue3pGZ81buEXvRCFLmdMfFep/view?usp=sharing')
 
 
@@ -71,12 +73,12 @@ def get_skip(df):
 skip_info = df.apply(get_skip, axis = 1)
 df = df.assign(skip_type = skip_info)
 
-duration_left, duration_right = st.beta_columns(2)
+duration_left, duration_right = st.columns(2)
 
 with duration_left:
-	st.image("danceability_boxplot.jpg")
+	st.image("spotify_streamlit_photos/danceability_boxplot.jpg")
 	st.caption("Data exploration to analyze skip behavior depending on dacibility.")
 
 with duration_right:
-	st.image("duration_boxplot.jpg")
+	st.image("spotify_streamlit_photos/duration_boxplot.jpg")
 	st.caption("Data exploration of whether the duration of a song plays a part in skip behavior.")
