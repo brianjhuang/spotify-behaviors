@@ -34,7 +34,8 @@ model_left, model_right = st.columns(2)
 
 with model_left:
   st.markdown("## __Sklearn Model__ ")
-  st.write("Using Sklearn, a machine learning package used alongside python, we implemented \
+  st.write("To come up with a prediction model for our analysis, we used Sklearn, \
+    a machine learning package used alongside python. With Sklearn, we implemented \
   Logistic Regression and Random Forest Classifier techniques to predict skip behavior \
   given specific musical tracks.")
 
@@ -94,6 +95,22 @@ if predict_button:
     score = pl.score(x_test, y_test)
     st.write(score)
     st.write("The prediction accuracy score is " + str(score) + "!")
+
+#explanation of how the model was generated
+st.markdown("### Sklearn Model Breakdown")
+
+st.markdown("#### Column Transformations")
+st.write("From our initial EDA, it was prominent that our data was a combination of categorical and nominal data.\
+  This meant that we had to convert our categrical data to numerical data in order to use it for our model. As a result, \
+  we implemented One Hot Encoding that allowed for our categorical data to be converted into numbers of 1's and 0's. \
+  These 1's and 0's allowed us to look at the data in a format that the model would understand and could easily interpret.")
+
+st.markdown("#### Preprocessing and Samples")
+st.write("Next, we used a Pipeline that gave sklearn clear steps on what we intended to perform.\
+  In our model, we used a RandomForestClassifier and used Sklearn's train_test_split method to \
+  split our sampled data into training samples and test samples.")
+
+
 
 #spotify play area
 bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
