@@ -28,11 +28,22 @@ log_data = pd.read_csv("data/training_set/log_mini.csv")
 track_data = pd.read_csv("data/track_features/tf_mini.csv")
 log_data = log_data.rename(columns = {'track_id_clean':'track_id'})
 
+df = pd.merge(log_data,track_data,on='track_id',how='left')
 
-st.markdown("## __Sklearn Model__ ")
-st.write("Using Sklearn, a machine learning package used alongside python, we implemented \
+model_left, model_right = st.columns(2)
+
+with model_left:
+  st.markdown("## __Sklearn Model__ ")
+  st.write("Using Sklearn, a machine learning package used alongside python, we implemented \
   Logistic Regression and Random Forest Classifier techniques to predict skip behavior \
   given specific musical tracks.")
+
+with model_right:
+  st.markdown('### Interested in the code?')
+  with st.expander("Click here to expand."):
+    st.image('spotify_streamlit_photos/model_code.jpg')
+    
+
 log_data['not_skipped'] = log_data['not_skipped'].apply(lambda x: 1 if x == True else 0)
 
 log_data['premium']= log_data['premium'].apply(lambda x: 1 if x is True else 0)
@@ -66,7 +77,7 @@ x_train, x_test, y_train, y_test = train_test_split(df.drop('not_skipped', axis 
 model = pl.fit(x_train, y_train)
 predictions = model.predict(x_test)
 
-predict_col1, predict_col2, predict_col3, predict_col4 = st.beta_columns(4)
+predict_col1, predict_col2, predict_col3, predict_col4 = st.columns(4)
 
 with predict_col1:
   predict_button = st.button("Predict")
@@ -75,7 +86,7 @@ with predict_col2:
 
 if predict_button:
 
-  sk_col1, sk_col2, sk_col3, sk_col4 = st.beta_columns(4)
+  sk_col1, sk_col2, sk_col3, sk_col4 = st.columns(4)
 
   with sk_col1:
     st.write(predictions)
@@ -83,3 +94,14 @@ if predict_button:
     score = pl.score(x_test, y_test)
     st.write(score)
     st.write("The prediction accuracy score is " + str(score) + "!")
+
+#spotify play area
+bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
+
+with music_bar:
+  play_button = st.image("spotify_streamlit_photos/spotify_play_button.png")
+  # if play_button:
+  #   play_button = st.image("pause_button.png")
+with music_bar_right:
+  st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
+st.progress(40)

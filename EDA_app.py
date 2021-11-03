@@ -96,19 +96,19 @@ with pause_right:
 st.markdown("#### Premium vs. Skip Behavior")
 premium_left, premium_right = st.columns(2)
 with premium_left:
-	st.image("premium_eda.png")
+	st.image("spotify_streamlit_photos/premium_eda.png")
 	st.caption("True percentage of users not skipping the current song, grouped by whether the user is premium or not.")
 with premium_right:
-	st.image("premium_eda_plot.png")
+	st.image("spotify_streamlit_photos/premium_eda_plot.png")
 	st.caption("Boxplot showing the number of users who skipped and not skipped grouped by whether the user is premium or not.")
 
 st.markdown("#### Shuffle vs. Skip Behavior")
 shuffle_left, shuffle_right = st.columns(2)
 with shuffle_left:
-	st.image("shuffle_eda.png")
+	st.image("spotify_streamlit_photos/shuffle_eda.png")
 	st.caption("True percentage of users not skipping the current song, grouped by whether the user is in shuffle mode.")
 with shuffle_right:
-	st.image("shuffle_eda_plot.png")
+	st.image("spotify_streamlit_photos/shuffle_eda_plot.png")
 	st.caption("Boxplot showing the number of users who skipped and not skipped grouped by whether the user is in \
 	shuffle mode or not.")
 
@@ -126,12 +126,12 @@ st.markdown("""
 duration_left, duration_right = st.columns(2)
 
 with duration_left:
-	st.image("danceability_boxplot.jpg")
+	st.image("spotify_streamlit_photos/danceability_boxplot.jpg")
 	st.caption("Boxplot showing the relationship between a track's danceability and users' skip behavior.")
 
 with duration_right:
 	st.image("spotify_streamlit_photos/duration_boxplot.jpg")
-	st.caption("Data exploration of whether the duration of a song plays a part in skip behavior.")
+	st.caption("Boxplot showing the relationship between a track's duration and users' skip behavior")
 
 bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
 
@@ -141,8 +141,5 @@ with music_bar:
 	# 	play_button = st.image("pause_button.png")
 with music_bar_right:
 	st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
-st.progress(10)
-
-st.image("duration_boxplot.jpg")
-st.caption("Boxplot showing the relationship between a track's duration and users' skip behavior")
+st.progress(20)
 

@@ -18,7 +18,7 @@ st.markdown("# Discussion of Methods")
 #problems with sklearn
 st.markdown("""## __Experiences with scikit-learn__	""")
 
-st.image("spotify_streamlit_photos/sklearn.png")
+st.image("spotify_streamlit_photos/sklearn.png", width = 1000)
 
 st.markdown("""
 Using sklearn to generate a model that would predict skipping behavior allowed for
@@ -63,4 +63,4 @@ with music_bar:
 	# 	play_button = st.image("pause_button.png")
 with music_bar_right:
 	st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
-st.progress(2)
+st.progress(65)
