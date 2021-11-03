@@ -27,48 +27,6 @@ app.previous_page_button = "Previous Page"
 
 
 def startpage():
-	st.markdown("""# streamlit-multipage-framework
-Framework for implementing multipage structure in streamlit apps.
-It was inspired by upraneelnihar's project: https://github.com/upraneelnihar/streamlit-multiapps.
-Developed by: Yan Almeida.
-# Required Libraries
-1. Streamlit (`pip install streamlit`);
-2. Joblib (`pip install joblib`);
-3. OS (`pip install os`).
-# Code Elements
-## Functions and Classes
-1. function `initialize()` -> Runs when the program starts and sets the initial page as 0;
-2. function `save(var_list, name, page_names)` -> Saves a list of variables, associates it with a name and defines which pages will receive these variables;
-3. function `load(name)` -> Loads a var_list previously saved;
-4. function `clear_cache(name=None)` -> Clears the variables in cache. Receives a list of variables to erase, but if none is given, clears all of the variables;
-5. function `start_app()` -> Clears all the variables in the cache when the app is started (but not after this);
-6. function `change_page(pag)` -> Sets the current page number as `pag`;
-7. function `read_page()` -> Returns current page number;
-8. class `app` -> Class to create pages (apps), defined by two attributes: name and func (app script defined as a function in the code);
-9. class `MultiPage` -> Class to create the MultiPage structure, defined by the following attributes: apps (a list containing the pages (apps)), initial_page (used to set a starting page for the app, if needed), initial_page_set (used to determine whether a starting page is set or not), next_page_button and previous_page_button (in order to define the label of the buttons that switch between pages), navbar_name (to set the navigation bar header) and block_navbar (to keep your app without a navigation bar).
-## MultiPage Public Attributes
-1. `next_page_button` -> Defines the label of the "Next Page" button. Default: "Next Page";
-2. `previous_page_button` -> Defines the label of the "Previous Page" button. Default: "Previous Page";
-3. `start_button` -> Defines the label of the starting page button that starts the application (it's only used if the app has a starting page). Default: "Let's go!";
-4. `navbar_name` -> Defines the Navigation Bar's name. Default: "Navigation".
-## MultiPage Class Methods
-1. `add_app(self, name, func)` -> Creates an app and adds it to the `apps` attribute;
-2. `set_initial_page(self, func)` -> Sets a starting page to the program;
-3. `disable_navbar(self)` -> Removes the navigation bar;
-4. `run(self)` -> Creates a sidebar with buttons to switch between pages and runs the apps depending on the chosen page. It also keeps the variables defined in previous pages, if the app function correctly applies "save".
-# How to use it
-1. Download "multipage.py" and put it in the same folder as your app;
-2. Import the class `MultiPage` and the functions `save` and `start_app` from multipage.py;
-3. Create a `MultiPage` object;
-4. Use the function `start_app` to clear the cache;
-5. Set the buttons' labels (next_page_button and previous_page_button attributes) and the navigation bar name (navbar_name attribute);
-6. Define the different pages (apps) as functions (use the `save` method in the end of each function if you need the app to remember the variables). If you do save variables, they are going to be passed as argument to the target functions;
-7. Use the `add_app` method to include each one of the functions;
-8. If you have a starting page for your program, include it by using the `set_initial_page` method;
-9. Use the `run` method.""")
-
-def landing(prev_vars): #Home Page
-
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
 	with spotify_image_left:
@@ -102,8 +60,6 @@ def landing(prev_vars): #Home Page
 	with music_bar_right:
 		st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
 	st.progress(2)
-
-
 
 
 def eda(prev_vars): #EDA / Data Cleaning
@@ -280,6 +236,7 @@ def model(prev_vars):
 	st.progress(40)
 
 
+
 def discussion(prev_vars): #problems/problems
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
@@ -293,7 +250,7 @@ def discussion(prev_vars): #problems/problems
 	#problems with sklearn
 	st.markdown("""## __Experiences with scikit-learn__	""")
 
-	st.image("spotify_streamlit_photos/sklearn.png")
+	st.image("spotify_streamlit_photos/sklearn.png", width = 1000)
 
 	st.markdown("""
 	Using sklearn to generate a model that would predict skipping behavior allowed for
@@ -338,7 +295,7 @@ def discussion(prev_vars): #problems/problems
 		# 	play_button = st.image("pause_button.png")
 	with music_bar_right:
 		st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
-	st.progress(2)
+	st.progress(65)
 
 
 
@@ -360,13 +317,26 @@ def about_us(prev_vars): #About Us Page
 	#st.image(images, width=300, caption=["Brian H", "Annie Fan", "Victor Thai", "Aishani Mohapatra" ])
 	brian, annie, victor, aishani = st.columns(4)
 	with brian:
-		brian = st.image(images[0], caption = "Brian Huang")
+		brian = st.image(images[0])
+		st.markdown("#### Brian Huang")
+		st.write("My name is Brian and I was born June 28 in Singapore. I am currently a Data science major and psychology minor at Warren College. \
+		I aspire to apply my data analysis skills to biology or medicine to speed up research processes. I have two sisters, Katherine and Angelina, and I enjoy playing tennis and cycling.")
 	with annie:
-		annie = st.image(images[1], caption = "Annie Fan")
+		annie = st.image(images[1])
+		st.markdown('#### Annie Fan')
+		st.write("My name is Annie Fan and I am a third year student majoring in data science and cognitive science. \
+			I grew up in China and I attended high school in Seattle, Washington. I am into data analysis and machine learning. \
+			Currently, I am learning data management with SQL and building recommender systems with data mining.")
 	with victor:
-		victor = st.image(images[2], caption = "Victor Thai")
+		victor = st.image(images[2])
+		st.markdown('#### Victor Thai')
+		st.write("My name is Victor and I am a second year studying Data Science at UCSD. I grew up in Oakland, CA and have just recently moved to San Diego to pursue my studies. \
+			In my free time, I enjoy staying active and being in nature by going on hikes. I plan on using data science to create improvements to heatlthcare technologies and procedures.")
 	with aishani:
-		aishani = st.image(images[3], caption = "Aishani Mohapatra")
+		aishani = st.image(images[3])
+		st.markdown('#### Aishani Mohapatra')
+		st.write("My name is Aishani and I am a second year at Muir College studying data science from San Ramon, CA. I am interested in exploring topics the intersection between language and machine learning, \
+			 particularly with Natural Language Processing. In my free time, she enjoys singing and hiking with friends.")
 	#st.image(images, use_column_width = False, caption=["Brian", "Annie", "Victor", "Aishani" ])
 
 	st.markdown('#')
@@ -380,13 +350,12 @@ def about_us(prev_vars): #About Us Page
 		# 	play_button = st.image("pause_button.png")
 	with music_bar_right:
 		st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
-	st.progress(2)
+	st.progress(90)
 
 
 
 
 app.set_initial_page(startpage)
-app.add_app("Home", landing)
 app.add_app("EDA", eda)
 app.add_app("Model", model)
 app.add_app("Discussion", discussion)
