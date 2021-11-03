@@ -63,8 +63,17 @@ def startpage():
 
 
 def eda(prev_vars): #EDA / Data Cleaning
+	spotify_image_left, spotify_image_right = st.columns([1,8])
+
+	with spotify_image_left:
+		spotify_logo = st.image("spotify.png")
+
 	#EDA / Data Cleaning
-	st.markdown("## __EDA / Data Cleaning__")
+	st.markdown("# EDA / Data Cleaning")
+
+	#EDA / Data Cleaning
+	st.markdown("## __Data Cleaning__")
+
 
 	st.markdown("""
 	### Let's first look at our data...
@@ -114,33 +123,87 @@ def eda(prev_vars): #EDA / Data Cleaning
 
 
 	st.write("Among the Log Data, skip results are given by the columns 'not_skipped', \
-		'skip_1','skip_2', and 'skip_3'. As a result these, columns must be dropped for \
-		our model to better predict the outcomes without such giveaways.")
+		'skip_1','skip_2', and 'skip_3'. These columns are combined into one column with boolean values that \
+		shows whether the user has skipped the song.")
 
-	st.write("The columns 'skip_1', 'skip_2', 'skip_3', and 'not_skipped' are dropped as they give skip behavior away.")
-	st.write("These are the updated columns that will be used for our model.")
+	st.write("The column 'hist_user_behavior_reason_end' directly determines users' skip behavior. As a result, \
+	it is dropped for our model to better predict the outcomes without such giveaways. ")
 
 	#get_skip
+	st.markdown("""## __EDA__
+	We performed exploratory data analysis to explore the patterns between different features \
+	and users' skipping behavior""")
+
+	st.markdown("#### Overall Skip Behavior")
+	skip_left, skip_right = st.columns(2)
+
+	with skip_left:
+		st.image("spotify_streamlit_photos/skip_eda.png")
+	with skip_right:
+		st.write("In our sample dataset, there are 111996 skipped entries and 55884 not_skipped entries.")
+
+	st.markdown("#### pause_before_play vs. Skip Behavior")
+	pause_left, pause_right = st.columns(2)
+	with pause_left:
+		st.image("spotify_streamlit_photos/pause_eda.png")
+		st.caption("True percentage of users not skipping the current song, grouped by how long of a pause \
+		the user takes before playing the current track.")
+	with pause_right:
+		st.image("spotify_streamlit_photos/pause_eda_plot.png")
+		st.caption("Boxplot showing the number of users who skipped and not skipped grouped by how long of a pause \
+		the user takes before playing the current track.")
+
+	st.markdown("#### Premium vs. Skip Behavior")
+	premium_left, premium_right = st.columns(2)
+	with premium_left:
+		st.image("spotify_streamlit_photos/premium_eda.png")
+		st.caption("True percentage of users not skipping the current song, grouped by whether the user is premium or not.")
+	with premium_right:
+		st.image("spotify_streamlit_photos/premium_eda_plot.png")
+		st.caption("Boxplot showing the number of users who skipped and not skipped grouped by whether the user is premium or not.")
+
+	st.markdown("#### Shuffle vs. Skip Behavior")
+	shuffle_left, shuffle_right = st.columns(2)
+	with shuffle_left:
+		st.image("spotify_streamlit_photos/shuffle_eda.png")
+		st.caption("True percentage of users not skipping the current song, grouped by whether the user is in shuffle mode.")
+	with shuffle_right:
+		st.image("spotify_streamlit_photos/shuffle_eda_plot.png")
+		st.caption("Boxplot showing the number of users who skipped and not skipped grouped by whether the user is in \
+		shuffle mode or not.")
+
 	st.markdown("""
-	### Analyzing duration of song with skips
+	### Tracks' features vs. Skip Behavior
 		""")
-	def get_skip(df):
-	    if df['not_skipped'] == 1:
-	        return 'not skipped'
-	    else:
-	        return 'skipped'
-	skip_info = df.apply(get_skip, axis = 1)
-	df = df.assign(skip_type = skip_info)
+	# def get_skip(df):
+	#     if df['not_skipped'] == 1:
+	#         return 'not skipped'
+	#     else:
+	#         return 'skipped'
+	# skip_info = df.apply(get_skip, axis = 1)
+	# df = df.assign(skip_type = skip_info)
 
 	duration_left, duration_right = st.columns(2)
 
 	with duration_left:
 		st.image("spotify_streamlit_photos/danceability_boxplot.jpg")
-		st.caption("Data exploration to analyze skip behavior depending on dacibility.")
+		st.caption("Boxplot showing the relationship between a track's danceability and users' skip behavior.")
 
 	with duration_right:
 		st.image("spotify_streamlit_photos/duration_boxplot.jpg")
-		st.caption("Data exploration of whether the duration of a song plays a part in skip behavior.")
+		st.caption("Boxplot showing the relationship between a track's duration and users' skip behavior")
+
+	bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
+
+	with music_bar:
+		play_button = st.image("spotify_streamlit_photos/spotify_play_button.png")
+		# if play_button:
+		# 	play_button = st.image("pause_button.png")
+	with music_bar_right:
+		st.image("spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
+	st.progress(20)
+
+
 
 
 def model(prev_vars):
@@ -355,15 +418,10 @@ def about_us(prev_vars): #About Us Page
 
 
 
-app.set_initial_page(startpage)
-app.add_app("EDA", eda)
-app.add_app("Model", model)
-app.add_app("Discussion", discussion)
-app.add_app("About Us", about_us)
+app.set_initial_page(startpage) #home/landing page
+app.add_app("EDA", eda) #Adds second page (eda) to the framework
+app.add_app("Model", model) #Adds third page (model) to the framework
+app.add_app("Discussion", discussion) #Adds fourth page (discussion) to the framework
+app.add_app("About Us", about_us) #Adds last page (about us) to the framework
 
-# app.add_app("Home", landing) #Adds first page (home) to the framework
-# app.add_app("EDA", eda) #Adds second page (eda) to the framework
-# app.add_app("Model", model) #Adds third page (model) to the framework
-# app.add_app("Discussion", problems) #Adds fourth page (discussion) to the framework
-# app.add_app("About Us", about_us) #Adds last page (about us) to the framework
 app.run() #Runs the multipage app!
