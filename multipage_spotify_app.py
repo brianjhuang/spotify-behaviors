@@ -16,6 +16,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+st.set_page_config(layout='wide')
 
 start_app() #Clears the cache when the app is started
 
