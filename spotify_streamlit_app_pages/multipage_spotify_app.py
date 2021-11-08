@@ -31,7 +31,7 @@ def startpage():
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
 	with spotify_image_left:
-		spotify_logo = st.image("spotify.png")
+		spotify_logo = st.image("spotify_streamlit_photos/spotify.png")
 
 	intro_left, intro_right = st.columns([3,1])
 
@@ -67,7 +67,7 @@ def eda(prev_vars): #EDA / Data Cleaning
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
 	with spotify_image_left:
-		spotify_logo = st.image("spotify.png")
+		spotify_logo = st.image("spotify_streamlit_photos/spotify.png")
 
 	#EDA / Data Cleaning
 	st.markdown("# EDA / Data Cleaning")
@@ -79,7 +79,7 @@ def eda(prev_vars): #EDA / Data Cleaning
 	st.markdown("""
 	### Let's first look at our data...
 
-	With a total of 64 gb of user data, we sampled our data using Pyspark and \
+	With a total of 500 gb of user data, we sampled our data using Pyspark and \
 	split samples into training and test sets to apply our models.
 
 		""")
@@ -211,7 +211,7 @@ def model(prev_vars):
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
 	with spotify_image_left:
-	  spotify_logo = st.image("spotify.png")
+	  spotify_logo = st.image("spotify_streamlit_photos/spotify.png")
 
 
 	st.markdown('# Spotify Behavior Model')
@@ -305,7 +305,7 @@ def discussion(prev_vars): #problems/problems
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
 	with spotify_image_left:
-		spotify_logo = st.image("spotify.png")
+		spotify_logo = st.image("spotify_streamlit_photos/spotify.png")
 
 	#Title of Page
 	st.markdown("# Discussion of Methods")
@@ -367,7 +367,7 @@ def about_us(prev_vars): #About Us Page
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
 	with spotify_image_left:
-		spotify_logo = st.image("spotify.png")
+		spotify_logo = st.image("spotify_streamlit_photos/spotify.png")
 
 	#Title of Page
 	st.markdown("""## __About Our Team__

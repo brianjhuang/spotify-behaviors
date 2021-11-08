@@ -7,7 +7,7 @@ st.set_page_config(layout="wide")
 spotify_image_left, spotify_image_mid, spotify_image_right = st.columns([8,5,8])
 
 with spotify_image_mid:
-	spotify_logo = st.image("spotify.png")
+	spotify_logo = st.image("spotify_streamlit_photos/spotify.png")
 
 intro_left, intro_mid, intro_right = st.columns([1,3,1])
 

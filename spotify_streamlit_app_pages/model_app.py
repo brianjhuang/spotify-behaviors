@@ -18,7 +18,7 @@ st.set_page_config(layout='wide')
 spotify_image_left, spotify_image_right = st.columns([1,8])
 
 with spotify_image_left:
-  spotify_logo = st.image("spotify.png")
+  spotify_logo = st.image("spotify_streamlit_photos/spotify.png")
 
 
 st.markdown('# Spotify Behavior Model')
