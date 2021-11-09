@@ -1,6 +1,12 @@
 import math
 from spotifyAPI import Spotify
 
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import Pipeline
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import FunctionTransformer
+import numpy as np
+
 class songRecommender():
 
     data = {}
@@ -12,12 +18,59 @@ class songRecommender():
         data - our persona user's information
         predict - the new songs from the API
         '''
-        self.data = self.parseData(data)
+        
+        self.data = self.parseData(self.dataPreprocessing(data))
         #parse the new data
-        self.features = self.featureVector(self.data)
+        self.features = self.featureVector(self.data) 
         #generate features for the new data
         self.predictFeatures = self.featureAPIVector(predict)
+        self.predictFeatures = self.scaleAPI(self.getPredict())
         #clean the api data
+        
+    def dataPreprocessing(self, data):
+        
+        cols = data.columns
+        
+        ss = ['acousticness', 'danceability', 'energy',
+       'instrumentalness', 'key', 'liveness', 'loudness', 'mode',
+       'speechiness', 'tempo', 'time_signature', 'valence']
+        
+        as_is = ['session_id']
+        
+        preproc = ColumnTransformer(
+            transformers = [
+                ('as_is', FunctionTransformer(lambda x: x), as_is),
+                ('standard_scale', StandardScaler(), ss),
+            ]
+        )
+        
+        processed = pd.DataFrame(preproc.fit_transform(data), columns = cols)
+        return processed
+    
+    def scaleAPI(self, data):
+        p = data
+
+        ss = ['acousticness', 'danceability', 'energy', 'instrumentalness', 'key',
+           'liveness', 'loudness', 'mode', 'speechiness', 'tempo',
+           'time_signature', 'valence']
+
+        preproc = ColumnTransformer(
+            transformers = [
+                ('standard_scale', StandardScaler(), ss)
+            ]
+        )
+
+        df = pd.DataFrame()
+        for entry in p:
+            temp = pd.DataFrame.from_dict(data = entry[1], orient = 'index').T
+            df = pd.concat([temp, df])
+        transformed = pd.DataFrame(preproc.fit_transform(df), columns = ss).to_dict(orient = 'records')
+        transformedPredict = []
+
+        for i in range(len(p)):
+            transformedPredict.append((p[i][0], transformed[i])) 
+
+        return transformedPredict
 
     def parseData(self, data):
 
@@ -66,10 +119,10 @@ class songRecommender():
 
     def getData(self):
         return self.data
-
+    
     def getFeatures(self):
         return self.features
-
+    
     def getPredict(self):
         return self.predictFeatures
 
@@ -101,11 +154,11 @@ class songRecommender():
 
         similarities.sort(reverse = True)
         return similarities[:N]
-
+    
     def similar(self, X, y):
         predictions = []
         for feature in X:
-            entry = {feature[0]:cosine(feature, y, 1)[0]}
+            entry = {feature[0]:self.cosine(feature, y, 1)}
             #figure out why it keeps returning 10 entries
             predictions.append(entry)
         return predictions
