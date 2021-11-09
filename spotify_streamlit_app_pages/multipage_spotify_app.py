@@ -63,6 +63,43 @@ def startpage():
 	st.progress(2)
 
 
+def landing(prev_vars): #home page
+		spotify_image_left, spotify_image_right = st.columns([1,8])
+
+		with spotify_image_left:
+			spotify_logo = st.image("../spotify_streamlit_photos/spotify.png")
+
+		intro_left, intro_right = st.columns([3,1])
+
+		with intro_left:
+			st.markdown("#  Will You Skip The Next Song?")
+			st.write("This project focues on analyzing the recommender systems among \
+				Spotify's application, a popular music streaming service. To determine\
+				 how Spotify is able to recommend songs to their listeners, we will \
+				 look at specific musical traits among tracks that listeners \
+				 have listened to, in order to predict whether they will play \
+				 through or skip a particular song.")
+
+
+		st.markdown('#')
+		st.markdown('#')
+		st.markdown('#')
+		st.markdown('#')
+		st.markdown('#')
+
+
+		bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
+
+		with music_bar:
+			play_button = st.image("../spotify_streamlit_photos/spotify_play_button.png")
+			# if play_button:
+			# 	play_button = st.image("pause_button.png")
+		with music_bar_right:
+			st.image("../spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
+		st.progress(2)
+
+
+
 def eda(prev_vars): #EDA / Data Cleaning
 	spotify_image_left, spotify_image_right = st.columns([1,8])
 
@@ -331,21 +368,49 @@ def discussion(prev_vars): #problems/problems
 		""")
 
 	#problems with behavior class
-	st.markdown("""## __Problems with the Behavior Class__""")
+	st.markdown("""## __The Recommendation Class__""")
 
 	st.image("../spotify_streamlit_photos/clustering.png")
 
 	st.markdown("""
-	The behavior class is the prediction model we created from scratch; we had much more
-	freedom to create our own models based on the specifications of what we wanted to do.
-	The main aspect we wanted to change from our sklearn model, was the fact that we
-	weren't able to group users' listening data together while predicting if a user
-	would skip a song. The prediction was generalized to all users in the dataset.
+	For our demo, recommendations were generated using Cosine similarity, taking in user data
+	and grouping the songs they listened to with the user. We generated a similarity function
+	to train a system that takes in a group of songs and their features, and outputs what songs
+	users are most likely to listen/are most similar to what our persona users will listen to.
 
-	However, we still came across some issues with our behavior class, especially since
-	we had no starting framework and there were too many elements to account for that
-	were much more easily done using the sklearn model, which is eventually what
-	we used for our final model.
+	However we still ran into the problem of grouping users by their listening activity.
+	One of the biggest problems when making our predictions, people listen to songs in order,
+	and those songs impact what they listen to next. We did not have time to implement the
+	weight of song sequencing, which could've improved our predictions a ton, as knowing how
+	people listen to songs provides crucial information. If we had more time, we could explore using
+	Markov chains in the future to account for sequencing.
+
+	We solved this problem of the "superuser" using k-means clustering for each user in our recommendation class.
+
+		""")
+	st.markdown("""## __Data, Privacy, and Other Issues__""")
+
+	st.image("../spotify_streamlit_photos/privacy.jpeg")
+
+	st.markdown("""
+	Our dataset was large, far larger than any dataset any of us had worked with up this point.
+	With well over 500GBs of data, our team was tasked with hours of sampling, cleaning the data
+	using PySpark, and leaving our devices open overnight to extract data samples of usable size.
+	Balancing the size of the sampled data while preserving the integrity of the data was a major time sink.
+	Thankfully, due to PySpark and the Mac application Amphetamine (which kept our laptops awake long enough
+	to sample overnight), we were able to sample workable sets of data.
+
+	In an attempt to add a bit of spice to our project, we attempted to fetch the actual song names
+	from the Spotify API. This, however, resulted in a grim discovery. The data returned, since
+	it's user data, had the track IDs encoded. This meant there was no way for us to retrieve tracks.
+	On top of that, that meant that many songs were encoded with unique IDs, meaning that the same song
+	would have a different ID. This made building out our recommender system difficult as it introduced
+	unnecessary redundancy that we couldn't resolve when clustering the data. In the future, we can avoid
+	this by extracting the data ourselves, rather than relying on an existing set.
+
+	As with all recommendations, we cannot account for users who have no prior history, or tracks
+	we have never seen before. We were unable to deal with the Cold Start problem, and simply allowed
+	our algorithm to give it's best guess when it came to dealing with this issue.
 
 		""")
 
@@ -374,7 +439,7 @@ def about_us(prev_vars): #About Us Page
 	#Title of Page
 	st.markdown("""## __About Our Team__""")
 	st.markdown("### Hello! We are undergraduate data science students at the University of California - San Diego")
-	
+
 
 
 	images = ["../spotify_streamlit_photos/brian.jpg", "../spotify_streamlit_photos/annie.jpg", "../spotify_streamlit_photos/victor.jpg",
@@ -383,26 +448,29 @@ def about_us(prev_vars): #About Us Page
 	brian, annie, victor, aishani = st.columns(4)
 	with brian:
 		brian = st.image(images[0])
-		st.markdown("#### Brian Huang")
-		st.write("My name is Brian and I was born June 28 in Singapore. I am currently a Data science major and psychology minor at Warren College. \
+		link = '[Brian Huang](https://www.linkedin.com/in/brian-huang-b5238817b/)'
+		st.markdown(link, unsafe_allow_html=True)
+		st.write("My name is Brian and I was born June 28 in Singapore. I am currently a data science major and psychology minor at Warren College. \
 		I aspire to apply my data analysis skills to biology or medicine to speed up research processes. I have two sisters, Katherine and Angelina, and I enjoy playing tennis and cycling.")
 	with annie:
 		annie = st.image(images[1])
-		st.markdown('#### Annie Fan')
+		link = '[Annie Fan](https://www.linkedin.com/in/annie-fan-b45273208/)'
+		st.markdown(link, unsafe_allow_html=True)
 		st.write("My name is Annie Fan and I am a third year student majoring in data science and cognitive science. \
 			I grew up in China and I attended high school in Seattle, Washington. I am into data analysis and machine learning. \
 			Currently, I am learning data management with SQL and building recommender systems with data mining.")
 	with victor:
 		victor = st.image(images[2])
-		st.markdown('#### Victor Thai')
-		st.write("My name is Victor and I am a second year studying Data Science at UCSD. I grew up in Oakland, CA and have just recently moved to San Diego to pursue my studies. \
+		link = '[Victor Thai](https://www.linkedin.com/in/victor-thai-37334317b/)'
+		st.markdown(link, unsafe_allow_html=True)
+		st.write("My name is Victor and I am a second year studying data science at UCSD. I grew up in Oakland, CA and have just recently moved to San Diego to pursue my studies. \
 			In my free time, I enjoy staying active and being in nature by going on hikes. I plan on using data science to create improvements to heatlthcare technologies and procedures.")
 	with aishani:
 		aishani = st.image(images[3])
-		st.markdown('#### Aishani Mohapatra')
+		link = '[Aishani Mohapatra](http://www.linkedin.com/in/aishani-mohapatra)'
+		st.markdown(link, unsafe_allow_html=True)
 		st.write("My name is Aishani and I am a second year at Muir College studying data science from San Ramon, CA. I am interested in exploring topics the intersection between language and machine learning, \
-			 particularly with Natural Language Processing. In my free time, she enjoys singing and hiking with friends.")
-	#st.image(images, use_column_width = False, caption=["Brian", "Annie", "Victor", "Aishani" ])
+			 particularly with Natural Language Processing. In my free time, I enjoy singing and hiking with friends.")
 
 	st.markdown('#')
 	st.markdown('#')
@@ -418,9 +486,8 @@ def about_us(prev_vars): #About Us Page
 	st.progress(90)
 
 
-
-
 app.set_initial_page(startpage) #home/landing page
+app.add_app("Home", landing) #home/landing page
 app.add_app("EDA", eda) #Adds second page (eda) to the framework
 app.add_app("Model", model) #Adds third page (model) to the framework
 app.add_app("Discussion", discussion) #Adds fourth page (discussion) to the framework
