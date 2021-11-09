@@ -16,6 +16,11 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
+
+import random
+from sklearn.decomposition import PCA
+import math
+from spotifyAPI import Spotify
 st.set_page_config(layout='wide')
 
 start_app() #Clears the cache when the app is started
@@ -338,6 +343,81 @@ def model(prev_vars):
 	  st.image("../spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
 	st.progress(40)
 
+def recommendation(pre_vars):
+
+	spotify_image_left, spotify_image_right = st.columns([1,8])
+
+	with spotify_image_left:
+		spotify_logo = st.image("../spotify_streamlit_photos/spotify.png")
+
+	st.markdown("""
+		# Recommendation Demo
+		""")
+
+	st.write("For our recommendation model, we have generated it using cosine similarity. \
+		We first took in user data and grouped songs that they listened to. Using a similarity function, \
+		we used this function to train a system that takes in a group of songs and its features to \
+		return songs that these users are similar to the songs that they have already listened to. ")
+
+	st.markdown("""
+		## Similarity Function
+
+		To determine the relative similarities that each song has with our prediction set, we used the following similarity function.
+		""")
+
+	userOneFeatures = pd.read_csv("../userOneFeatures.csv")
+	userTwoFeatures = pd.read_csv("../userTwoFeatures.csv")
+	userThreeFeatures = pd.read_csv("../userThreeFeatures.csv")
+
+	userOneFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
+	userTwoFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
+	userThreeFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
+
+
+	from spotifyAPI import Spotify
+
+	s = Spotify()
+	st.write('Authentication Passed')
+	
+	def selectSong(song):
+		return modelOutput[song]
+
+	st.write('Getting the Top 50 - USA...')
+
+# songs = s.get_playlist_items()
+
+# songIndex = {}
+# for i in range(len(songs)):
+# 	songIndex[songs[i]] = i
+
+# dropDown = st.selectbox('What song would you like to pick?',
+# 	(tuple(songs)))
+
+	features = s.get_playlist_features('Top 50 - USA')
+	st.write('Running Model...')
+	
+
+	from songRecommender import songRecommender
+
+	model = songRecommender(data = userTwoFeatures, predict = features)
+
+	modelOutput = model.similar(model.getPredict(), model.getFeatures())
+
+	st.write(modelOutput)
+	
+	st.markdown('#')
+	st.markdown('#')
+
+
+	bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
+
+	with music_bar:
+		play_button = st.image("../spotify_streamlit_photos/spotify_play_button.png")
+		# if play_button:
+		# 	play_button = st.image("pause_button.png")
+	with music_bar_right:
+		st.image("../spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
+	st.progress(85)
 
 
 def discussion(prev_vars): #problems/problems
@@ -490,6 +570,7 @@ app.set_initial_page(startpage) #home/landing page
 app.add_app("Home", landing) #home/landing page
 app.add_app("EDA", eda) #Adds second page (eda) to the framework
 app.add_app("Model", model) #Adds third page (model) to the framework
+app.add_app("Recommendation", recommendation)
 app.add_app("Discussion", discussion) #Adds fourth page (discussion) to the framework
 app.add_app("About Us", about_us) #Adds last page (about us) to the framework
 
