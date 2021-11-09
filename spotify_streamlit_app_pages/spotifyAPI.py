@@ -145,7 +145,7 @@ class Spotify(object):
         items = self.get_playlist_items(str(query))
 
         for item in items:
-            time.sleep(5)
+            time.sleep(1)
             features.append(self.get_song_features(self.get_song_id(query = str(item), search_type = 'track')))
 
         return features
