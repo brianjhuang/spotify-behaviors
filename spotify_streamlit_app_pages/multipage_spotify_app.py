@@ -288,6 +288,8 @@ def model(prev_vars):
 	    st.write(score)
 	    st.write("The prediction accuracy score is " + str(score) + "!")
 
+	st.components.v1.html('<iframe src="https://open.spotify.com/embed/album/1DFixLWuPkv3KT3TnV35m3" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>', width=None, height=None, scrolling=False)
+
 	#spotify play area
 	bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
 
