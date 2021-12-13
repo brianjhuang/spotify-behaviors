@@ -24,8 +24,8 @@ class Spotify(object):
     access_token = None
     access_token_expires = datetime.datetime.now()
     expired = True
-    client_id = '42dc405940204b44b042a2620a5a5f32' #erase before pushing to github, fill in with your client_id and secret if using personally
-    client_secret = '7727c00ae8a84d828aa0a58f56d0875b'
+    client_id = '' #erase before pushing to github, fill in with your client_id and secret if using personally
+    client_secret = ''
     token_url = 'https://accounts.spotify.com/api/token'
 
     def __init__(self, *args, **kwargs):
