@@ -20,15 +20,13 @@ class songRecommender():
     data (dictionary) - all the data we are using
     features (list) - all the features we are predicitng with
     predictFeatures (list) - all the features we get using the Spotify API.
-    songs (list) - the name of the songs from the API.
     '''
 
     data = {}
     features = []
     predictFeatures = []
-    songs = [] #songs from the api
 
-    def __init__(self, data, predict, songs):
+    def __init__(self, data, predict):
         '''
         Our constructor. Gets and cleans our data. 
         Generates a feature vector for both the features we have 
@@ -45,9 +43,9 @@ class songRecommender():
         #parse the new data
         self.features = self.featureVector(self.data) 
         #generate features for the new data
+
         self.predictFeatures = self.featureAPIVector(predict)
         self.predictFeatures = self.scaleAPI(self.getPredict())
-        self.songs = songs
         #clean the api data
         
     def dataPreprocessing(self, data):
@@ -181,6 +179,14 @@ class songRecommender():
         '''
         vector = []
         keep = ['danceability', 'energy', 'key', 'loudness', 'mode', 'speechiness', 'acousticness', 'instrumentalness', 'liveness', 'valence', 'tempo', 'time_signature']
+        
+        if isinstance(data, dict):
+            #if we want to just compare one song
+            temp = {k:v for k, v in data.items() if k in keep}
+            temp = dict(sorted(temp.items()))
+            vector.append((data['uri'], temp))
+            return vector
+        
         for d in data:
             temp = {k:v for k, v in d.items() if k in keep}
             temp = dict(sorted(temp.items()))
@@ -246,7 +252,8 @@ class songRecommender():
             denom = math.sqrt(denom1) * math.sqrt(denom2)
             if denom == 0:
                 sim = 0
-            sim = numer/denom
+            else:
+                sim = numer/denom
 
             similarities.append((sim, featureTwo[0]))
 
@@ -265,11 +272,8 @@ class songRecommender():
         
         predictions (list) - our predictions
         '''
-        predictions = {}
-        songID = 0
+        predictions = []
         for feature in X:
-            entry = (feature[0],self.cosine(feature, y, 1))
-            #figure out why it keeps returning 10 entries
-            predictions[self.songs[songID]] = entry
-            songID += 1
-        return predictions
+            entry = {feature[0]:self.cosine(feature, y, 1)}
+            predictions.append(entry)
+        return predictions[:10]
