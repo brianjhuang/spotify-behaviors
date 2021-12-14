@@ -374,6 +374,12 @@ def recommendation(pre_vars):
 	userTwoFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 	userThreeFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 
+	update = st.button("Get the most recent songs?")
+
+	if update:
+		os.remove('features.json')
+		os.remove('songs.txt')
+
 	def auth(client_id, client_secret):
 	    s = Spotify(client_id, client_secret)
 	    return s
