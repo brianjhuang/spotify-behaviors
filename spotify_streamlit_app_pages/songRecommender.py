@@ -27,8 +27,9 @@ class songRecommender():
     features = []
     predictFeatures = []
     songs = [] #songs from the api
+    persona = False
 
-    def __init__(self, data, predict, songs):
+    def __init__(self, data, predict, songs, persona = False):
         '''
         Our constructor. Gets and cleans our data. 
         Generates a feature vector for both the features we have 
@@ -40,10 +41,15 @@ class songRecommender():
         data (dictionary) - our persona user's information
         predict (dictionary) - the new songs from the API
         '''
+        self.persona = persona
         
-        self.data = self.parseData(self.dataPreprocessing(data))
-        #parse the new data
-        self.features = self.featureVector(self.data) 
+        if self.persona:
+            self.data = self.parseData(self.dataPreprocessing(data))
+            #parse the new data
+            self.features = self.featureVector(self.data)
+        else:
+            self.data = self.featureAPIVector(data)
+            self.features = self.scaleAPI(self.getData())
         #generate features for the new data
         self.predictFeatures = self.featureAPIVector(predict)
         self.predictFeatures = self.scaleAPI(self.getPredict())
@@ -270,6 +276,6 @@ class songRecommender():
         for feature in X:
             entry = (feature[0],self.cosine(feature, y, 1))
             #figure out why it keeps returning 10 entries
-            predictions[self.songs[songID]] = entry
+            predictions[self.songs[songID][0]] = entry
             songID += 1
         return predictions

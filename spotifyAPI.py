@@ -251,7 +251,8 @@ class Spotify(object):
         playlist_id(string) - the id of the playlist we're looking for.
         '''
         #default returns top 50 songs in the USA
-        items = self.search(str('Top 50 - USA'), search_type = 'playlist')['playlists']['items']
+        items = self.search(str(query), search_type = 'playlist')['playlists']['items']
+        playlist_id = ""
         for i in items:
             playlist_maker = i['owner']['display_name']
             if playlist_maker == desired_artist:
@@ -259,7 +260,7 @@ class Spotify(object):
 
         return playlist_id
 
-    def get_playlist_items(self, query = 'Top 50 - USA', search_type = 'playlist'):
+    def get_playlist_items(self, query = 'Top 50 - USA', search_type = 'playlist', desired_artist = 'Spotify', playlist_id = ""):
         '''
         Get the playist items we want.
 
@@ -271,9 +272,15 @@ class Spotify(object):
 
         The items in the specified playlist.
         '''
-        playlist_id = self.get_playlist_id(str(query), str(search_type))
-        itemsDict = self.get_resource(playlist_id, resource_type = 'playlists', version = 'v1', tracks = True)
-        return [i['track']['name'] for i in itemsDict['items']]
+        if len(playlist_id) >= 1:
+            pid = playlist_id
+            itemsDict = self.get_resource(pid, resource_type = 'playlists', version = 'v1', tracks = True)
+        else:
+            pid = self.get_playlist_id(str(query), str(search_type), str(desired_artist))
+            itemsDict = self.get_resource(pid, resource_type = 'playlists', version = 'v1', tracks = True)
+        if len(itemsDict) == 0:
+            raise Exception("No Playlist Found :(")
+        return [(i['track']['name'], i['track']['artists'][0]['name'], i['track']['id']) for i in itemsDict['items']]
 
 
     def get_song_link(self, query, search_type = 'track'):
@@ -300,7 +307,7 @@ class Spotify(object):
         '''
         webbrowser.open(str(self.get_song_link(query, search_type)))
 
-    def get_playlist_features(self, query, search_type = 'playlist'):
+    def get_playlist_features(self, query = 'Top 50 - USA', search_type = 'playlist', desired_artist = 'Spotify', playlist_id = ""):
         '''
         This gets the playlist features we want.
 
@@ -314,11 +321,10 @@ class Spotify(object):
         '''
         features = []
 
-        items = self.get_playlist_items(str(query))
+        items = self.get_playlist_items(str(query), str(search_type), str(desired_artist), playlist_id)
 
         for item in items:
-            time.sleep(1)
-            features.append(self.get_song_features(self.get_song_id(query = str(item), search_type = 'track')))
+            features.append(self.get_song_features(item[2]))
 
         return features
 

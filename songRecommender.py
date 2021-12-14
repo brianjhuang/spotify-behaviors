@@ -11,11 +11,11 @@ import json
 
 class songRecommender():
     '''
-    Our song recommender class. 
+    Our song recommender class.
     Utlizes the Spotify API to gather data.
     Preprocesses our data and standardizes song features.
     Generates recommendations using cosine-similarity.
-    
+
     Parameters:
     data (dictionary) - all the data we are using
     features (list) - all the features we are predicitng with
@@ -27,67 +27,73 @@ class songRecommender():
     features = []
     predictFeatures = []
     songs = [] #songs from the api
+    persona = False
 
-    def __init__(self, data, predict, songs):
+    def __init__(self, data, predict, songs, persona = False):
         '''
-        Our constructor. Gets and cleans our data. 
-        Generates a feature vector for both the features we have 
+        Our constructor. Gets and cleans our data.
+        Generates a feature vector for both the features we have
         and the features we have from the Spotify API.
-        
+
         Scales all of our features to the same scale.
-        
+
         Params:
         data (dictionary) - our persona user's information
         predict (dictionary) - the new songs from the API
         '''
-        
-        self.data = self.parseData(self.dataPreprocessing(data))
-        #parse the new data
-        self.features = self.featureVector(self.data) 
+        self.persona = persona
+
+        if self.persona:
+            self.data = self.parseData(self.dataPreprocessing(data))
+            #parse the new data
+            self.features = self.featureVector(self.data)
+        else:
+            self.data = self.featureAPIVector(data)
+            self.features = self.scaleAPI(self.getData())
         #generate features for the new data
         self.predictFeatures = self.featureAPIVector(predict)
         self.predictFeatures = self.scaleAPI(self.getPredict())
         self.songs = songs
         #clean the api data
-        
+
     def dataPreprocessing(self, data):
         '''
         This preprocesses our data for us. Standard Scales all of our data.
-        
+
         Params:
-        
+
         data (dictionary) - the data we want to scale
-        
+
         Returns:
         processed (DataFrame) - the processed data
         '''
-        
+
         cols = data.columns
-        
+
         ss = ['acousticness', 'danceability', 'energy',
        'instrumentalness', 'key', 'liveness', 'loudness', 'mode',
        'speechiness', 'tempo', 'time_signature', 'valence']
-        
+
         as_is = ['session_id']
-        
+
         preproc = ColumnTransformer(
             transformers = [
                 ('as_is', FunctionTransformer(lambda x: x), as_is),
                 ('standard_scale', StandardScaler(), ss),
             ]
         )
-        
+
         processed = pd.DataFrame(preproc.fit_transform(data), columns = cols)
         return processed
-    
+
     def scaleAPI(self, data):
         '''
         This preprocesses our data for us. Standard Scales all of our data.
-        
+
         Params:
-        
+
         data (dictionary) - the data we want to scale
-        
+
         Returns:
         processed (DataFrame) - the processed data
         '''
@@ -112,17 +118,17 @@ class songRecommender():
         transformedPredict = []
 
         for i in range(len(p)):
-            transformedPredict.append((p[i][0], transformed[i])) 
+            transformedPredict.append((p[i][0], transformed[i]))
 
         return transformedPredict
 
     def parseData(self, data):
         '''
         Parse our data and turn it into a dictionary that we can use.
-        
+
         Params:
         data (json) - the data that we want to parse
-        
+
         Returns:
         cleaned (dictionary) - the cleaned data with session_id as the key and the features as the values
         '''
@@ -150,13 +156,13 @@ class songRecommender():
     def featureVector(self, data):
         '''
         Transforms our dictionary of song features into a matrix of feature vectors
-        
+
         Params:
-        
+
         data (dictionary) - the dictionary of song features
-        
+
         Returns:
-        
+
         vector(list) - the vector of song features
         '''
         vector = []
@@ -170,13 +176,13 @@ class songRecommender():
     def featureAPIVector(self, data):
         '''
         Transforms our dictionary of song features into a matrix of feature vectors
-        
+
         Params:
-        
+
         data (dictionary) - the dictionary of song features
-        
+
         Returns:
-        
+
         vector(list) - the vector of song features
         '''
         vector = []
@@ -191,25 +197,25 @@ class songRecommender():
     def getData(self):
         '''
         Get our data.
-        
+
         Returns:
         data (dicionary)
         '''
         return self.data
-    
+
     def getFeatures(self):
         '''
         Get our features.
-        
+
         Returns:
         features (list)
         '''
         return self.features
-    
+
     def getPredict(self):
         '''
         Get our features.
-        
+
         Returns:
         features (list)
         '''
@@ -220,16 +226,16 @@ class songRecommender():
         Take in a song (feature) which is a song from our API.
         Take in a group of songs (features) which are songs our persona user/user has listened to.
         Return the N amount of similiar songs from our user that are similiar to the song we inputted.
-        
+
         Params:
         feature - a feature vector of tuples, with index 0 being link and 1 being the vector
         feature is the song from the API
         features - all feature vectors belonging to current persona user
         all the songs in our generated user (data)
         N - number of similiar songs we want to return
-        
+
         Returns:
-        
+
         similarities (list) - a list of all of our similarities
         '''
         similarities = []
@@ -252,17 +258,17 @@ class songRecommender():
 
         similarities.sort(reverse = True)
         return similarities[:N]
-    
+
     def similar(self, X, y):
         '''
         Runs cosine similarity on our entire feature vector.
-        
+
         Params:
         X (dictionary) - our feature matrix
         y (list) - the items we want to compare to
-        
+
         Returns:
-        
+
         predictions (list) - our predictions
         '''
         predictions = {}
@@ -270,6 +276,6 @@ class songRecommender():
         for feature in X:
             entry = (feature[0],self.cosine(feature, y, 1))
             #figure out why it keeps returning 10 entries
-            predictions[self.songs[songID]] = entry
+            predictions[self.songs[songID][0]] = entry
             songID += 1
         return predictions

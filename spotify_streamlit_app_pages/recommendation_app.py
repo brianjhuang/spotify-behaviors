@@ -10,9 +10,6 @@ from sklearn.decomposition import PCA
 import math
 from spotifyAPI import Spotify
 import json
-from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-from webdriver_manager.chrome import ChromeDriverManager
 
 spotify_image_left, spotify_image_right = st.columns([1,8])
 
@@ -41,6 +38,13 @@ userThreeFeatures = pd.read_csv("../userThreeFeatures.csv")
 userOneFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 userTwoFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 userThreeFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
+
+update = st.button("Get the most recent songs?")
+#the top 50 songs is always changing, so this lets us fetch new songs
+
+if update:
+	os.remove('features.json')
+	os.remove('songs.txt')
 
 def auth(client_id, client_secret):
     s = Spotify(client_id, client_secret)
@@ -130,13 +134,7 @@ html_string ='''
 
 st.write("The song you chose:")
 st.components.v1.html(uri + html_string, width=None, height=None, scrolling=False)
-# def clickSong():
-#     driver = webdriver.Chrome(ChromeDriverManager().install())
-#     driver.get('localhost:8501')
 
-#     driver.switch_to.frame(driver.find_element_by_xpath("/html/body/div/div[1]/div/div/div/div/section/div/div[1]/div[13]/iframe"))
-#     driver.find_element_by_xpath("//*[@id=\"main\"]/div/div/div[1]/div[1]/div/div/button/svg/path").click()
-# clickSong()
 st.write("Here is the most simliar song from User " + str(userDown) + ": ", str(simAndSong[1]))
 st.write("Here is our similarity score:", str(simAndSong[0]))
 

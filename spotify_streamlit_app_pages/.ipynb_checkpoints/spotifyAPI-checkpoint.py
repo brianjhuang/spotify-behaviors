@@ -9,9 +9,9 @@ import time
 
 class Spotify(object):
     '''
-    This class helps us authenticate and fetch data 
-    from the Spotify API. 
-    
+    This class helps us authenticate and fetch data
+    from the Spotify API.
+
     Parameters:
     access_token (string) - our access token to fetch data
     access_token_expires (datetime) - time until token expires
@@ -19,7 +19,7 @@ class Spotify(object):
     client_id (string) - our client id to fetch our token
     client_secret (string) - our client secret to fetch our token
     token_url (string) - where we can fetch our token
-    
+
     '''
     access_token = None
     access_token_expires = datetime.datetime.now()
@@ -46,7 +46,7 @@ class Spotify(object):
         '''
         Ask the user for their client_id and client_secret.
         Using the getpass library allows us to do it without revealing sensitive information.
-        
+
         Returns:
         client_id(string) - the client id
         client_secret(string) - the client secret
@@ -76,12 +76,12 @@ class Spotify(object):
         #encode the client credentials into base64
 
         return client_creds_base64.decode()
-        #return the decoded base64 client credentials 
+        #return the decoded base64 client credentials
 
     def get_token_headers(self):
         '''
         Get our token headers.
-        
+
         Returns (dictionary) - Token hearders
         '''
 
@@ -96,7 +96,7 @@ class Spotify(object):
     def get_token_data(self):
         '''
         Get token data.
-        
+
         Returns (dictionary) - Token data
         '''
 
@@ -109,7 +109,7 @@ class Spotify(object):
     def perform_auth(self):
         '''
         Performs our authentication for us.
-        
+
         Returns:
         boolean - True or False value based on the status of our authentication.
         '''
@@ -134,7 +134,7 @@ class Spotify(object):
     def get_token(self):
         '''
         Performs authentication and returns the headers with our token
-        
+
         Returns:
         headers (dictionary): our token with headers
         '''
@@ -154,7 +154,7 @@ class Spotify(object):
     def get_resource_header(self):
         '''
         Get resource headers.
-        
+
         Returns:
         headers (dictionary) : our resource headers
         '''
@@ -166,13 +166,13 @@ class Spotify(object):
     def get_resource(self, lookup_id, resource_type = 'albums', version = 'v1', tracks = False):
         '''
         Get our resources.
-        
+
         Params:
         lookup_id (string) : the id or item we want to look up (albums, tracks, artists)
         resource_type : the type of thing we want (tracks, albums, artists, playlists). default is albums
         version: the version of the API we want. default is v1
         tracks: if we want to get tracks. default is false.
-        
+
         Returns:
         r.json() (json/dictionary): the resources we want for the item we're looking up
         '''
@@ -189,10 +189,10 @@ class Spotify(object):
     def get_album(self, _id):
         '''
         Get the album we want.
-        
+
         Params:
         _id (string) - the item we want
-        
+
         Returns:
         album (json/dictionary) - the album we want
         '''
@@ -201,10 +201,10 @@ class Spotify(object):
     def get_artist(self, _id):
         '''
         Get the artist we want.
-        
+
         Params:
         _id (string) - the item we want
-        
+
         Return:
         artist (json/dictionary) - the artist we want
         '''
@@ -213,12 +213,12 @@ class Spotify(object):
     def get_song_features(self, _id):
         '''
         Get the song we want.
-        
+
         Params:
         _id (string) - the item we want
-        
+
         Returns:
-        
+
         song_features (json/dictionary) - all the features of the song we want
         '''
         return self.get_resource(_id, resource_type = 'audio-features', version = 'v1')
@@ -226,11 +226,11 @@ class Spotify(object):
     def get_song_id(self, query, search_type = 'track'):
         '''
         Get the song id we want.
-        
+
         Params:
         query (string) - the item we want
         search_type - default is track, should not be changed
-        
+
         Returns:
         song_id (string) - the song id we're looking for
         '''
@@ -240,50 +240,51 @@ class Spotify(object):
     def get_playlist_id(self, query = 'Top 50 - USA', search_type = 'playlist', desired_artist = 'Spotify'):
         '''
         Get the playlist id we want.
-        
+
         Params:
         query (string) - the item we want
         search_type - default is playlist, should not be changed
         desired_artist = 'For duplicate playlist, we grab by name'
-        
+
         Returns:
-        
+
         playlist_id(string) - the id of the playlist we're looking for.
         '''
         #default returns top 50 songs in the USA
-        items = self.search(str('Top 50 - USA'), search_type = 'playlist')['playlists']['items']
+        items = self.search(str(query), search_type = 'playlist')['playlists']['items']
+        playlist_id = ""
         for i in items:
             playlist_maker = i['owner']['display_name']
             if playlist_maker == desired_artist:
                 playlist_id = i['id']
-        
+
         return playlist_id
 
-    def get_playlist_items(self, query = 'Top 50 - USA', search_type = 'playlist'):
+    def get_playlist_items(self, query = 'Top 50 - USA', search_type = 'playlist', desired_artist = 'Spotify'):
         '''
         Get the playist items we want.
-        
+
         Params:
         query (string) - the item we want
         search_type - default is playlist, should not be changed
-        
+
         Returns:
-        
+
         The items in the specified playlist.
         '''
-        playlist_id = self.get_playlist_id(str(query), str(search_type))
-        itemsDict = self.get_resource(playlist_id, resource_type = 'playlists', version = 'v1', tracks = True)
-        return [i['track']['name'] for i in itemsDict['items']]
+        pid = self.get_playlist_id(str(query), str(search_type), str(desired_artist))
+        itemsDict = self.get_resource(pid, resource_type = 'playlists', version = 'v1', tracks = True)
+        return [(i['track']['name'], i['track']['artists'][0]['name'], i['track']['id']) for i in itemsDict['items']]
 
 
     def get_song_link(self, query, search_type = 'track'):
         '''
         Get the playist link we want.
-        
+
         Params:
         query (string) - the item we want
         search_type - default is playlist, should not be changed
-        
+
         Returns:
         endpoint (string) - the endpoint we want to get each link
         '''
@@ -292,43 +293,42 @@ class Spotify(object):
 
     def play_song(self, query, search_type = 'track'):
         '''
-        This plays a song using the webbrowser library. 
-        
+        This plays a song using the webbrowser library.
+
         Params:
         query (string) - the song we want to play
         search_type - default is track, should not be changed
         '''
         webbrowser.open(str(self.get_song_link(query, search_type)))
 
-    def get_playlist_features(self, query, search_type = 'playlist'):
+    def get_playlist_features(self, query = 'Top 50 - USA', search_type = 'playlist', desired_artist = 'Spotify'):
         '''
         This gets the playlist features we want.
-        
+
         Params:
         query (string) - the name or query for the playlist we want
         search_type (string) - default is playlistm should not be changed
-        
+
         Returns:
-        
+
         features (json/dictionary) - the features of the playlist
         '''
         features = []
 
-        items = self.get_playlist_items(str(query))
+        items = self.get_playlist_items(str(query), str(search_type), str(desired_artist))
 
         for item in items:
-            time.sleep(1)
-            features.append(self.get_song_features(self.get_song_id(query = str(item), search_type = 'track')))
+            features.append(self.get_song_features(item[2]))
 
         return features
 
     def base_search(self, q):
         '''
         The basic search for items in the API.
-        
+
         Params:
         q (string) - the query or item we want
-        
+
         Returns:
         A dictionary/json with the items we want
         '''
@@ -346,15 +346,15 @@ class Spotify(object):
     def search(self, query = None, operator = None, operator_query = None, search_type = 'artist'):
         '''
         Advanced search/building on the base search function.
-        
+
         Params:
         query (string) - the item/query we want to look for
-        operator (string) - the operator for the query 
+        operator (string) - the operator for the query
         operator_query (string) - the operator query
         search_type (string) - what we want to look for, default search_type is artist
-        
+
         Returns:
-        
+
         A json/dictionary of what we searched for.
         '''
 
