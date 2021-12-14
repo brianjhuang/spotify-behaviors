@@ -373,18 +373,23 @@ def recommendation(pre_vars):
 	userOneFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 	userTwoFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 	userThreeFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
+	#get the persona users informatin and clean the data
 
 	update = st.button("Get the most recent songs?")
+	#the top 50 songs is always changing, so this lets us fetch new songs
 
 	if update:
 		os.remove('features.json')
 		os.remove('songs.txt')
 
 	def auth(client_id, client_secret):
+		#authenticate us if we need to use the API
 	    s = Spotify(client_id, client_secret)
 	    return s
 
 	if not (os.path.exists('features.json') and os.path.exists('songs.txt')):
+		#if we haven't already downloaded the data, go ahead and ask to authenticate
+		#we need a client id and client secret for this
 	    user = st.text_input("Client ID: ")
 	    password = st.text_input("Client Secret: ")
 	    s = auth(user, password)
@@ -393,6 +398,13 @@ def recommendation(pre_vars):
 	st.write('Getting the Top 50 - USA...')
 
 	def get_songs():
+		'''
+		This helper function will fetch the Top 50 songs in the US.
+		If we already have the file, we load it in and move on
+		If not we have to go ahead and fetch information from the API
+		This saves us time so streamlit does not take 15 minutes to run each time
+		we choose an option.
+		'''
 	    if os.path.exists('songs.txt'):
 	        songs = open('songs.txt').read().split(",")
 	        if len(songs) <= 0:
@@ -412,6 +424,11 @@ def recommendation(pre_vars):
 	        return songs
 
 	def run_model(data, songs):
+		'''
+		Run model checks if we have the features.json (the top 50 song features)
+		and if we do, runs the model. Otherwise it will fetch the top 50 songs and save
+		it to a file for quicker use.
+		'''
 	    if os.path.exists('features.json'):
 	        f = open('features.json')
 	        features = json.load(f)
@@ -430,6 +447,7 @@ def recommendation(pre_vars):
 	songs = get_songs()
 	st.write("Top 50 Songs Retrieved!")
 	songOutput = st.selectbox('What song would you like to view?', tuple(songs))
+	#get our songs and create a drop down
 
 	from songRecommender import songRecommender
 
@@ -441,10 +459,12 @@ def recommendation(pre_vars):
 	#plug in the user we want, the song we want
 	model = run_model(userDict[userDown], songs)
 	modelOutput = model.similar(model.getPredict(), model.getFeatures())
+	#get our model's outputs and run our model
 
 	output = modelOutput[songOutput]
 	track_uri = output[0]
 	simAndSong = output[1][0]
+	#get the outputs
 
 	uri = f'<iframe src="https://open.spotify.com/embed/track/{track_uri[14:]}" width="300" height="80" frameborder="0" allowtransparency="true" allow="autoplayt; encrypted-media"></iframe>'
 	html_string ='''
@@ -466,6 +486,8 @@ def recommendation(pre_vars):
 
 	st.write("The song you chose:")
 	st.components.v1.html(uri + html_string, width=None, height=None, scrolling=False)
+	#get the spotify song embed
+
 	# def clickSong():
 	#     driver = webdriver.Chrome(ChromeDriverManager().install())
 	#     driver.get('localhost:8501')
@@ -475,6 +497,7 @@ def recommendation(pre_vars):
 	# clickSong()
 	st.write("Here is the most simliar song from User " + str(userDown) + ": ", str(simAndSong[1]))
 	st.write("Here is our similarity score:", str(simAndSong[0]))
+	#report our similarities and our track id
 
 	st.markdown('#')
 	st.markdown('#')
