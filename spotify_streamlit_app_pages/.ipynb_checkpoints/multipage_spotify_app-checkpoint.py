@@ -21,6 +21,10 @@ import random
 from sklearn.decomposition import PCA
 import math
 from spotifyAPI import Spotify
+import json
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+from webdriver_manager.chrome import ChromeDriverManager
 st.set_page_config(layout='wide')
 
 start_app() #Clears the cache when the app is started

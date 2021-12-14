@@ -10,6 +10,9 @@ from sklearn.decomposition import PCA
 import math
 from spotifyAPI import Spotify
 import json
+from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
+from webdriver_manager.chrome import ChromeDriverManager
 
 spotify_image_left, spotify_image_right = st.columns([1,8])
 
@@ -39,14 +42,37 @@ userOneFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 userTwoFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 userThreeFeatures.drop('Unnamed: 0', axis = 1, inplace = True)
 
-s = Spotify()
+def auth(client_id, client_secret):
+    s = Spotify(client_id, client_secret)
+    return s
+
+if not (os.path.exists('features.json') and os.path.exists('songs.txt')):
+    user = st.text_input("Client ID: ")
+    password = st.text_input("Client Secret: ")
+    s = auth(user, password)
 st.write('Authentication Passed')
 
 st.write('Getting the Top 50 - USA...')
 
 @st.cache
 def get_songs():
-    return s.get_playlist_items()
+    if os.path.exists('songs.txt'):
+        songs = open('songs.txt').read().split(",")
+        if len(songs) <= 0:
+            songs = s.get_playlist_items()
+            with open('songs.txt', 'w', encoding = 'utf-8') as s_file:
+                for song in songs:
+                    s_file.write(song + ",")
+                songs = open('songs.txt').read().split(",")
+            return songs
+        return songs
+    else:
+        songs = s.get_playlist_items()
+        with open('songs.txt', 'w', encoding = 'utf-8') as s_file:
+            for song in songs:
+                s_file.write(song + ",")
+        songs = open('songs.txt').read().split(",")
+        return songs
 
 @st.cache
 def run_model(data, songs):
@@ -104,10 +130,25 @@ html_string ='''
 
 st.write("The song you chose:")
 st.components.v1.html(uri + html_string, width=None, height=None, scrolling=False)
+# def clickSong():
+#     driver = webdriver.Chrome(ChromeDriverManager().install())
+#     driver.get('localhost:8501')
 
-
+#     driver.switch_to.frame(driver.find_element_by_xpath("/html/body/div/div[1]/div/div/div/div/section/div/div[1]/div[13]/iframe"))
+#     driver.find_element_by_xpath("//*[@id=\"main\"]/div/div/div[1]/div[1]/div/div/button/svg/path").click()
+# clickSong()
 st.write("Here is the most simliar song from User " + str(userDown) + ": ", str(simAndSong[1]))
 st.write("Here is our similarity score:", str(simAndSong[0]))
 
+st.markdown('#')
+st.markdown('#')
 
+bar_leftspacer, music_bar_left, music_bar, music_bar_right, bar_rightspacer = st.columns([10,1.5,1.5,1.5,10])
 
+with music_bar:
+	play_button = st.image("../spotify_streamlit_photos/spotify_play_button.png")
+	# if play_button:
+	# 	play_button = st.image("pause_button.png")
+with music_bar_right:
+	st.image("../spotify_streamlit_photos/skip_button_spotify.png", use_column_width = True)
+st.progress(85)

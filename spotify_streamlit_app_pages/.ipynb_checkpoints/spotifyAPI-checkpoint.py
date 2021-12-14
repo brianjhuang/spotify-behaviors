@@ -24,19 +24,23 @@ class Spotify(object):
     access_token = None
     access_token_expires = datetime.datetime.now()
     expired = True
-    client_id = '' #erase before pushing to github, fill in with your client_id and secret if using personally
-    client_secret = ''
+    client_id = None #erase before pushing to github, fill in with your client_id and secret if using personally
+    client_secret = None
     token_url = 'https://accounts.spotify.com/api/token'
 
-    def __init__(self, *args, **kwargs):
+    def __init__(self, client_id = None, client_secret = None, *args, **kwargs):
         '''
         Our constructor. Initalizes and collects our Client ID and Client secret.
         '''
         super().__init__(*args, **kwargs)
-        if (self.client_id == None and self.client_secret == None):
+        if (client_id == None and client_secret == None): #input info via command line
             #if we haven't set a default client_id and client_secret
             self.client_id, self.client_secret = self.getCreds()
             #ask the user for their creds
+        else:
+            #work around steamlit asking multiple times
+            self.client_id = client_id
+            self.client_secret = client_secret
 
     def getCreds(self):
         '''
